@@ -1,0 +1,2 @@
+# Minimal dependencies for baseline
+pytest

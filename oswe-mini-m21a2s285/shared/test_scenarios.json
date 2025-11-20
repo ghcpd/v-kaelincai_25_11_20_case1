@@ -1,0 +1,66 @@
+{
+  "report_scenarios": [
+    {
+      "id": "daily_core_then_dimensions",
+      "description": "Daily KPI core request then fetch dimensions",
+      "initial_state": {"cache": "cold", "freshness_lag": 0, "peak": false},
+      "expectation": {"cache_hit": false, "pre_agg": true}
+    },
+    {
+      "id": "peak_high_cost",
+      "description": "High-cost dimension in peak hours triggers circuit breaker",
+      "initial_state": {"cache": "cold", "freshness_lag": 0, "peak": true},
+      "expectation": {"circuit_breaker_may_trigger": true}
+    },
+    {
+      "id": "early_morning_incomplete",
+      "description": "Early morning partial data freshness",
+      "initial_state": {"cache": "cold", "freshness_lag": 2, "peak": false},
+      "expectation": {"in_progress": true}
+    },
+    {
+      "id": "complex_slicing",
+      "description": "Nested dimension filters and fallback",
+      "initial_state": {"cache": "warm", "freshness_lag": 0, "peak": false},
+      "expectation": {"cache_hit": true}
+    },
+    {
+      "id": "malformed_input",
+      "description": "Missing granularity or wrong types",
+      "initial_state": {"cache": "cold", "freshness_lag": 0, "peak": false},
+      "expectation": {"error": true}
+    }
+  ],
+  "ticket_scenarios": [
+    {
+      "id": "normal_overloaded",
+      "description": "Overloaded layout into improved structure",
+      "input": {"sections": [{"id": "summary", "fields": [{"name": "problem_description", "value": "x"}, {"name":"priority","value":"high"}]}, {"id":"history","fields":[{"name":"h1"},{"name":"h2"}]}]},
+      "expectation": {"core_on_top": true, "history_collapsed": true}
+    },
+    {
+      "id": "misoperation_risk",
+      "description": "Internal vs customer reply confusion",
+      "input": {"sections": [{"id":"summary","fields":[]},{"id":"notes","fields":[{"name":"internal","type":"internal"},{"name":"reply","type":"public"}]}]},
+      "expectation": {"internal_diffed": true}
+    },
+    {
+      "id": "long_history",
+      "description": "Long timeline collapses to reduce scroll",
+      "input": {"sections": [{"id":"history","fields": [ {"name":"h1"},{"name":"h2"},{"name":"h3"},{"name":"h4"},{"name":"h5"},{"name":"h6"},{"name":"h7"},{"name":"h8"},{"name":"h9"},{"name":"h10"},{"name":"h11"},{"name":"h12"},{"name":"h13"},{"name":"h14"},{"name":"h15"},{"name":"h16"},{"name":"h17"},{"name":"h18"},{"name":"h19"},{"name":"h20"}]}]},
+      "expectation": {"history_collapsed": true}
+    },
+    {
+      "id": "deep_nesting",
+      "description": "Deep nested fields are reorganized",
+      "input": {"sections": [{"id":"nested","fields":[{"name":"a","children":[{"name":"b"}]}]}},
+      "expectation": {"reorganized": true}
+    },
+    {
+      "id": "malformed_layout",
+      "description": "Missing fields and unsafe HTML",
+      "input": {"sections": "not a list", "unsafe":"<script>alert(1)</script>"},
+      "expectation": {"error": true}
+    }
+  ]
+}
