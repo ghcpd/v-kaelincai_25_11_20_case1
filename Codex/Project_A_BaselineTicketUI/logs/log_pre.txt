@@ -1,0 +1,5 @@
+normal_flow: clarity=20 collapsed=0 risk=95
+mis_operation_flow: clarity=35 collapsed=0 risk=90
+long_scroll_flow: clarity=25 collapsed=0 risk=80
+complex_nesting: clarity=10 collapsed=0 risk=95
+malformed_input: clarity=10 collapsed=0 risk=85

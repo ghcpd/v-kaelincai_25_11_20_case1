@@ -1,0 +1,683 @@
+[
+  {
+    "id": "normal_flow",
+    "result": {
+      "status": "success",
+      "metrics": {
+        "clarity_score": 95,
+        "collapsed_sections": 2,
+        "scroll_savings": 24,
+        "misoperation_risk": 5,
+        "attachment_non_blocking": true,
+        "edge_case_coverage": 85
+      },
+      "ui_warnings": [],
+      "edge_case_flags": [
+        "mis-operation-prevented"
+      ],
+      "errors": [],
+      "layout": {
+        "sections": [
+          {
+            "id": "core-information",
+            "title": "Core Ticket Overview",
+            "category": "core",
+            "collapsed": false,
+            "items": [
+              {
+                "field": "problem_description",
+                "value": "VPN not connecting",
+                "emphasis": true
+              },
+              {
+                "field": "priority",
+                "value": "P1",
+                "emphasis": true
+              },
+              {
+                "field": "status",
+                "value": "Open",
+                "emphasis": true
+              }
+            ],
+            "children": [],
+            "highlight": true
+          },
+          {
+            "id": "history",
+            "title": "Entire Activity Log",
+            "category": "history",
+            "collapsed": true,
+            "items": [
+              {
+                "entry": "2024-01-10",
+                "event": "Status changed"
+              },
+              {
+                "entry": "2024-01-11",
+                "event": "Agent reply"
+              }
+            ],
+            "children": [],
+            "summary_count": 2
+          },
+          {
+            "id": "related",
+            "title": "Related Tickets",
+            "category": "related",
+            "collapsed": true,
+            "items": [
+              "#123",
+              "#456"
+            ],
+            "children": [],
+            "summary_count": 2
+          }
+        ],
+        "notes": [
+          {
+            "id": "n1",
+            "visibility": "customer",
+            "content": "We'll look.",
+            "style": "elevated-panel",
+            "channel_label": "Customer reply"
+          },
+          {
+            "id": "n2",
+            "visibility": "internal",
+            "content": "Need approval.",
+            "style": "muted-panel",
+            "channel_label": "Internal note"
+          }
+        ],
+        "attachments": {
+          "mode": "side-panel",
+          "items": [
+            {
+              "name": "log.txt",
+              "size": "1MB"
+            }
+          ],
+          "preview_variant": "side-panel",
+          "non_blocking": true
+        },
+        "actions": [
+          {
+            "id": "close",
+            "label": "Close Ticket",
+            "critical": true,
+            "requires_confirmation": true,
+            "confirmation_copy": "Confirm Close Ticket"
+          }
+        ],
+        "meta": {
+          "problem_description": "VPN not connecting",
+          "priority": "P1",
+          "status": "Open"
+        }
+      }
+    }
+  },
+  {
+    "id": "mis_operation_flow",
+    "result": {
+      "status": "success",
+      "metrics": {
+        "clarity_score": 95,
+        "collapsed_sections": 1,
+        "scroll_savings": 12,
+        "misoperation_risk": 5,
+        "attachment_non_blocking": true,
+        "edge_case_coverage": 80
+      },
+      "ui_warnings": [],
+      "edge_case_flags": [
+        "mis-operation-prevented"
+      ],
+      "errors": [],
+      "layout": {
+        "sections": [
+          {
+            "id": "core-information",
+            "title": "Core Ticket Overview",
+            "category": "core",
+            "collapsed": false,
+            "items": [
+              {
+                "field": "problem_description",
+                "value": "Invoice mismatch",
+                "emphasis": true
+              },
+              {
+                "field": "priority",
+                "value": "P2",
+                "emphasis": true
+              },
+              {
+                "field": "status",
+                "value": "Pending",
+                "emphasis": true
+              }
+            ],
+            "children": [],
+            "highlight": true
+          },
+          {
+            "id": "history",
+            "title": "Activity",
+            "category": "history",
+            "collapsed": true,
+            "items": [
+              {
+                "entry": "2024-02-01",
+                "event": "Customer replied"
+              }
+            ],
+            "children": [],
+            "summary_count": 1
+          }
+        ],
+        "notes": [
+          {
+            "id": "n10",
+            "visibility": "customer",
+            "content": "Customer visible update",
+            "style": "elevated-panel",
+            "channel_label": "Customer reply"
+          },
+          {
+            "id": "n11",
+            "visibility": "internal",
+            "content": "Need finance review",
+            "style": "muted-panel",
+            "channel_label": "Internal note"
+          }
+        ],
+        "attachments": {
+          "mode": "inline",
+          "items": [],
+          "preview_variant": "inline",
+          "non_blocking": true
+        },
+        "actions": [
+          {
+            "id": "merge",
+            "label": "Merge",
+            "critical": true,
+            "requires_confirmation": true,
+            "confirmation_copy": "Confirm Merge"
+          }
+        ],
+        "meta": {
+          "problem_description": "Invoice mismatch",
+          "priority": "P2",
+          "status": "Pending"
+        }
+      }
+    }
+  },
+  {
+    "id": "long_scroll_flow",
+    "result": {
+      "status": "success",
+      "metrics": {
+        "clarity_score": 85,
+        "collapsed_sections": 1,
+        "scroll_savings": 52,
+        "misoperation_risk": 30,
+        "attachment_non_blocking": true,
+        "edge_case_coverage": 80
+      },
+      "ui_warnings": [],
+      "edge_case_flags": [
+        "long-history-collapsed"
+      ],
+      "errors": [],
+      "layout": {
+        "sections": [
+          {
+            "id": "core-information",
+            "title": "Core Ticket Overview",
+            "category": "core",
+            "collapsed": false,
+            "items": [
+              {
+                "field": "problem_description",
+                "value": "API latency",
+                "emphasis": true
+              },
+              {
+                "field": "priority",
+                "value": "P0",
+                "emphasis": true
+              },
+              {
+                "field": "status",
+                "value": "Investigating",
+                "emphasis": true
+              }
+            ],
+            "children": [],
+            "highlight": true
+          },
+          {
+            "id": "history",
+            "title": "Massive History",
+            "category": "history",
+            "collapsed": true,
+            "items": [
+              {
+                "entry": "2024-03-01",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-02",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-03",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-04",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-05",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-06",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-07",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-08",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-09",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-10",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-11",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-12",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-13",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-14",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-15",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-16",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-17",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-18",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-19",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-20",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-21",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-22",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-23",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-24",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-25",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-26",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-27",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-28",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-29",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-30",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-31",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-32",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-33",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-34",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-35",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-36",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-37",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-38",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-39",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-40",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-41",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-42",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-43",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-44",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-45",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-46",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-47",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-48",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-49",
+                "event": "Auto log"
+              },
+              {
+                "entry": "2024-03-50",
+                "event": "Auto log"
+              }
+            ],
+            "children": [],
+            "summary_count": 50
+          }
+        ],
+        "notes": [
+          {
+            "id": "n20",
+            "visibility": "customer",
+            "content": "Latency spikes",
+            "style": "elevated-panel",
+            "channel_label": "Customer reply"
+          }
+        ],
+        "attachments": {
+          "mode": "side-panel",
+          "items": [
+            {
+              "name": "trace.har",
+              "size": "10MB"
+            }
+          ],
+          "preview_variant": "side-panel",
+          "non_blocking": true
+        },
+        "actions": [
+          {
+            "id": "reroute",
+            "label": "Reroute",
+            "critical": false,
+            "requires_confirmation": false
+          }
+        ],
+        "meta": {
+          "problem_description": "API latency",
+          "priority": "P0",
+          "status": "Investigating"
+        }
+      }
+    }
+  },
+  {
+    "id": "complex_nesting",
+    "result": {
+      "status": "success",
+      "metrics": {
+        "clarity_score": 90,
+        "collapsed_sections": 1,
+        "scroll_savings": 12,
+        "misoperation_risk": 20,
+        "attachment_non_blocking": true,
+        "edge_case_coverage": 80
+      },
+      "ui_warnings": [],
+      "edge_case_flags": [
+        "nesting-regrouped"
+      ],
+      "errors": [],
+      "layout": {
+        "sections": [
+          {
+            "id": "core-information",
+            "title": "Core Ticket Overview",
+            "category": "core",
+            "collapsed": false,
+            "items": [
+              {
+                "field": "problem_description",
+                "value": "Escalation",
+                "emphasis": true
+              },
+              {
+                "field": "priority",
+                "value": "P3",
+                "emphasis": true
+              },
+              {
+                "field": "status",
+                "value": "Assigned",
+                "emphasis": true
+              }
+            ],
+            "children": [],
+            "highlight": true
+          },
+          {
+            "id": "level2",
+            "title": "Level 2",
+            "category": "container",
+            "collapsed": false,
+            "items": [],
+            "children": []
+          },
+          {
+            "id": "wrapper",
+            "title": "Wrapper",
+            "category": "container",
+            "collapsed": false,
+            "items": [],
+            "children": []
+          },
+          {
+            "id": "history",
+            "title": "Nested History",
+            "category": "history",
+            "collapsed": true,
+            "items": [
+              {
+                "entry": "2024-04-01",
+                "event": "Created"
+              }
+            ],
+            "children": [],
+            "summary_count": 1
+          }
+        ],
+        "notes": [
+          {
+            "id": "n30",
+            "visibility": "internal",
+            "content": "Threat analysis",
+            "style": "muted-panel",
+            "channel_label": "Internal note"
+          }
+        ],
+        "attachments": {
+          "mode": "inline",
+          "items": [],
+          "preview_variant": "inline",
+          "non_blocking": true
+        },
+        "actions": [
+          {
+            "id": "escalate",
+            "label": "Escalate",
+            "critical": true,
+            "requires_confirmation": true,
+            "confirmation_copy": "Confirm Escalate"
+          }
+        ],
+        "meta": {
+          "problem_description": "Escalation",
+          "priority": "P3",
+          "status": "Assigned"
+        }
+      }
+    }
+  },
+  {
+    "id": "malformed_input",
+    "result": {
+      "status": "success",
+      "metrics": {
+        "clarity_score": 80,
+        "collapsed_sections": 0,
+        "scroll_savings": 0,
+        "misoperation_risk": 30,
+        "attachment_non_blocking": true,
+        "edge_case_coverage": 80
+      },
+      "ui_warnings": [
+        "sections-rebuilt",
+        "notes-rebuilt",
+        "sanitized-html"
+      ],
+      "edge_case_flags": [
+        "malformed-corrected",
+        "html-neutralized"
+      ],
+      "errors": [],
+      "layout": {
+        "sections": [
+          {
+            "id": "core-information",
+            "title": "Core Ticket Overview",
+            "category": "core",
+            "collapsed": false,
+            "items": [
+              {
+                "field": "problem_description",
+                "value": "Unknown",
+                "emphasis": true
+              },
+              {
+                "field": "priority",
+                "value": null,
+                "emphasis": true
+              },
+              {
+                "field": "status",
+                "value": "Unknown",
+                "emphasis": true
+              }
+            ],
+            "children": [],
+            "highlight": true
+          }
+        ],
+        "notes": [],
+        "attachments": {
+          "mode": "inline",
+          "items": null,
+          "preview_variant": "inline",
+          "non_blocking": true
+        },
+        "actions": [],
+        "meta": {
+          "problem_description": "Unknown",
+          "priority": null,
+          "status": "Unknown"
+        }
+      }
+    }
+  }
+]

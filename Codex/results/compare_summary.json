@@ -1,0 +1,112 @@
+{
+  "total_scenarios": 5,
+  "average_clarity_pre": 20.0,
+  "average_clarity_post": 89.0,
+  "average_misoperation_risk_pre": 89.0,
+  "average_misoperation_risk_post": 18.0,
+  "total_scroll_savings_delta": 100,
+  "total_collapsed_sections_delta": 5,
+  "attachment_preview_improvements": 4,
+  "scenarios": [
+    {
+      "id": "normal_flow",
+      "baseline_status": "success",
+      "enhanced_status": "success",
+      "clarity_pre": 20,
+      "clarity_post": 95,
+      "collapsed_pre": 0,
+      "collapsed_post": 2,
+      "scroll_pre": 0,
+      "scroll_post": 24,
+      "attachment_pre": false,
+      "attachment_post": true,
+      "misoperation_pre": 95,
+      "misoperation_post": 5,
+      "edge_case_flags_post": [
+        "mis-operation-prevented"
+      ],
+      "ui_warnings_post": []
+    },
+    {
+      "id": "mis_operation_flow",
+      "baseline_status": "success",
+      "enhanced_status": "success",
+      "clarity_pre": 35,
+      "clarity_post": 95,
+      "collapsed_pre": 0,
+      "collapsed_post": 1,
+      "scroll_pre": 0,
+      "scroll_post": 12,
+      "attachment_pre": true,
+      "attachment_post": true,
+      "misoperation_pre": 90,
+      "misoperation_post": 5,
+      "edge_case_flags_post": [
+        "mis-operation-prevented"
+      ],
+      "ui_warnings_post": []
+    },
+    {
+      "id": "long_scroll_flow",
+      "baseline_status": "success",
+      "enhanced_status": "success",
+      "clarity_pre": 25,
+      "clarity_post": 85,
+      "collapsed_pre": 0,
+      "collapsed_post": 1,
+      "scroll_pre": 0,
+      "scroll_post": 52,
+      "attachment_pre": false,
+      "attachment_post": true,
+      "misoperation_pre": 80,
+      "misoperation_post": 30,
+      "edge_case_flags_post": [
+        "long-history-collapsed"
+      ],
+      "ui_warnings_post": []
+    },
+    {
+      "id": "complex_nesting",
+      "baseline_status": "success",
+      "enhanced_status": "success",
+      "clarity_pre": 10,
+      "clarity_post": 90,
+      "collapsed_pre": 0,
+      "collapsed_post": 1,
+      "scroll_pre": 0,
+      "scroll_post": 12,
+      "attachment_pre": false,
+      "attachment_post": true,
+      "misoperation_pre": 95,
+      "misoperation_post": 20,
+      "edge_case_flags_post": [
+        "nesting-regrouped"
+      ],
+      "ui_warnings_post": []
+    },
+    {
+      "id": "malformed_input",
+      "baseline_status": "degraded",
+      "enhanced_status": "success",
+      "clarity_pre": 10,
+      "clarity_post": 80,
+      "collapsed_pre": 0,
+      "collapsed_post": 0,
+      "scroll_pre": 0,
+      "scroll_post": 0,
+      "attachment_pre": false,
+      "attachment_post": true,
+      "misoperation_pre": 85,
+      "misoperation_post": 30,
+      "edge_case_flags_post": [
+        "malformed-corrected",
+        "html-neutralized"
+      ],
+      "ui_warnings_post": [
+        "sections-rebuilt",
+        "notes-rebuilt",
+        "sanitized-html"
+      ]
+    }
+  ]
+}
