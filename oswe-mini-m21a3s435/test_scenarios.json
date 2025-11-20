@@ -1,0 +1,92 @@
+[
+  {
+    "name": "overloaded_standard",
+    "description": "A typical overloaded ticket layout with core info buried and a large history and attachments.",
+    "input": {
+      "title": "Ticket #12345",
+      "sections": [
+        {"name": "metadata", "items": [{"key":"id","value":"12345"}]},
+        {"name": "attachments", "type": "attachment", "items": [{"filename":"screenshot1.png","preview":"/tmp/1.png"},{"filename":"log.txt","preview":"/tmp/2.png"}]},
+        {"name": "activity_feed", "type": "history", "items": ["a","b","c","d","e","f","g"]},
+        {"name": "details", "content": {"problem_description": "The app crashes on start", "priority":"high","status":"open"}}
+      ]
+    },
+    "expected": {
+      "status": "improved",
+      "metrics": {"hierarchy_clarity": 1.0, "collapsed_sections": 1, "has_non_blocking_attachments": true},
+      "errors": [],
+      "ui_warnings": []
+    }
+  },
+
+  {
+    "name": "misoperation_confusion",
+    "description": "Internal note and customer reply look identical causing mis-operation. Contains a critical delete action without confirmation.",
+    "input": {
+      "layout": [
+        {"name":"notes","type":"note","items":[{"text":"Investigate this","visibility":"internal"},{"text":"Customer said it's urgent"}]},
+        {"name":"controls","type":"actions","items":[{"id":"delete","label":"Delete ticket","critical":true}]},
+        {"name":"problem_description","content":"Login fails intermittently"}
+      ]
+    },
+    "expected": {
+      "status": "improved",
+      "metrics": {"misoperation_risk": 0.2, "hierarchy_clarity": 1.0},
+      "errors": [],
+      "ui_warnings": []
+    }
+  },
+
+  {
+    "name": "long_history_scroll",
+    "description": "Very long history list should be collapsed and trimmed into a preview with hidden count.",
+    "input": {
+      "sections": [
+        {"name":"problem_description","content":"Delay when saving records"},
+        {"name":"timeline","type":"history","items": ["t0","t1","t2","t3","t4","t5","t6","t7","t8","t9","t10","t11","t12","t13","t14","t15","t16","t17","t18","t19","t20","t21","t22","t23","t24"] }
+      ]
+    },
+    "expected": {
+      "status": "improved",
+      "metrics": {"collapsed_sections": 1, "total_sections": 2},
+      "errors": [],
+      "ui_warnings": []
+    }
+  },
+
+  {
+    "name": "complex_nesting",
+    "description": "Deeply nested layout tree mixing different container types and missing names",
+    "input": {
+      "layout": [
+        {"name":"sectionA","items":[{"type":"panel","name":"inner","items":[{"name":"problem_description","content":"Broken rendering"}]}]},
+        {"": {"empty": {}}},
+        {"name":"attachments","items":[{"filename": null, "preview":"/tmp/x.png"}, 42, ["weird"]] }
+      ]
+    },
+    "expected": {
+      "status": "safe_degraded",
+      "metrics": {"hierarchy_clarity": 0.5},
+      "errors": ["Empty key at root[2]"],
+      "ui_warnings": ["mixed-type lists"]
+    }
+  },
+
+  {
+    "name": "malformed_unsafe_html",
+    "description": "Malformed fields and unsafe HTML script tags must be sanitized and flagged",
+    "input": {
+      "title": "<script>alert(1)</script>Ticket X",
+      "sections": [
+        {"name":"details","content": {"problem_description":"<script>bad()</script>Crash"}},
+        {"name":"history","items":[{"message":"normal entry"}]}
+      ]
+    },
+    "expected": {
+      "status": "sanitized",
+      "metrics": {"hierarchy_clarity": 0.5},
+      "errors": [],
+      "ui_warnings": ["script removed at root.title","script removed at root.sections[0].content.problem_description"]
+    }
+  }
+]

@@ -1,0 +1,5 @@
+overloaded_standard: status=ok, score=0.2
+misoperation_confusion: status=ok, score=0.2
+long_history_scroll: status=ok, score=0.2
+complex_nesting: status=ok, score=0.2
+malformed_unsafe_html: status=ok, score=0.2

@@ -1,0 +1,34 @@
+{
+  "results": [
+    {
+      "name": "overloaded_standard",
+      "status": "ok",
+      "hierarchy_score": 0.2,
+      "warnings": []
+    },
+    {
+      "name": "misoperation_confusion",
+      "status": "ok",
+      "hierarchy_score": 0.2,
+      "warnings": []
+    },
+    {
+      "name": "long_history_scroll",
+      "status": "ok",
+      "hierarchy_score": 0.2,
+      "warnings": []
+    },
+    {
+      "name": "complex_nesting",
+      "status": "ok",
+      "hierarchy_score": 0.2,
+      "warnings": []
+    },
+    {
+      "name": "malformed_unsafe_html",
+      "status": "ok",
+      "hierarchy_score": 0.2,
+      "warnings": []
+    }
+  ]
+}

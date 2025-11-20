@@ -1,0 +1,74 @@
+{
+  "results": [
+    {
+      "name": "overloaded_standard",
+      "status": "mismatch",
+      "metrics": {
+        "hierarchy_clarity": 0.2,
+        "collapsed_sections": 1,
+        "total_sections": 4,
+        "misoperation_risk": 0.9,
+        "has_non_blocking_attachments": true
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "name": "misoperation_confusion",
+      "status": "mismatch",
+      "metrics": {
+        "hierarchy_clarity": 1.0,
+        "collapsed_sections": 0,
+        "total_sections": 3,
+        "misoperation_risk": 0.9,
+        "has_non_blocking_attachments": false
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "name": "long_history_scroll",
+      "status": "ok",
+      "metrics": {
+        "hierarchy_clarity": 1.0,
+        "collapsed_sections": 1,
+        "total_sections": 2,
+        "misoperation_risk": 0.9,
+        "has_non_blocking_attachments": false
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "name": "complex_nesting",
+      "status": "ok",
+      "metrics": {
+        "hierarchy_clarity": 0.2,
+        "collapsed_sections": 0,
+        "total_sections": 3,
+        "misoperation_risk": 0.9,
+        "has_non_blocking_attachments": true
+      },
+      "warnings": [],
+      "errors": [
+        "Empty key at root[1]",
+        "Empty dict at root[1]..empty"
+      ]
+    },
+    {
+      "name": "malformed_unsafe_html",
+      "status": "ok",
+      "metrics": {
+        "hierarchy_clarity": 0.2,
+        "collapsed_sections": 1,
+        "total_sections": 2,
+        "misoperation_risk": 0.9,
+        "has_non_blocking_attachments": false
+      },
+      "warnings": [
+        "script removed at root.title"
+      ],
+      "errors": []
+    }
+  ]
+}
