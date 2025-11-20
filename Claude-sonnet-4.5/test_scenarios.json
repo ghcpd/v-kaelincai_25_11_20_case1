@@ -1,0 +1,450 @@
+{
+  "scenarios": [
+    {
+      "id": "scenario_1_normal_overload",
+      "name": "Normal Overloaded Ticket Layout",
+      "description": "Standard ticket with excessive scrolling, buried key info, and no hierarchy",
+      "input": {
+        "ticket_id": "TKT-2024-001",
+        "layout_structure": {
+          "sections": [
+            {
+              "type": "metadata",
+              "order": 1,
+              "fields": [
+                {"key": "ticket_number", "value": "TKT-2024-001", "importance": "low"},
+                {"key": "created_at", "value": "2024-01-15T10:30:00Z", "importance": "low"},
+                {"key": "updated_at", "value": "2024-01-20T14:22:00Z", "importance": "low"}
+              ]
+            },
+            {
+              "type": "description",
+              "order": 2,
+              "collapsed": false,
+              "content": "Customer reports critical payment gateway timeout affecting 500+ transactions per hour. Revenue impact estimated at $50K/hour.",
+              "importance": "critical"
+            },
+            {
+              "type": "history",
+              "order": 3,
+              "collapsed": false,
+              "entries": [
+                {"timestamp": "2024-01-15T10:30:00Z", "actor": "Customer", "action": "Created ticket"},
+                {"timestamp": "2024-01-15T10:35:00Z", "actor": "Agent Smith", "action": "Acknowledged"},
+                {"timestamp": "2024-01-15T11:00:00Z", "actor": "Agent Smith", "action": "Added internal note"},
+                {"timestamp": "2024-01-15T11:30:00Z", "actor": "Agent Smith", "action": "Escalated to Tier 2"},
+                {"timestamp": "2024-01-16T09:00:00Z", "actor": "Engineer Jane", "action": "Started investigation"},
+                {"timestamp": "2024-01-16T14:00:00Z", "actor": "Engineer Jane", "action": "Identified root cause"},
+                {"timestamp": "2024-01-17T10:00:00Z", "actor": "Engineer Jane", "action": "Deployed fix to staging"},
+                {"timestamp": "2024-01-18T10:00:00Z", "actor": "Engineer Jane", "action": "Deployed fix to production"},
+                {"timestamp": "2024-01-19T10:00:00Z", "actor": "Agent Smith", "action": "Verified fix"},
+                {"timestamp": "2024-01-20T14:22:00Z", "actor": "Customer", "action": "Confirmed resolution"}
+              ]
+            },
+            {
+              "type": "priority",
+              "order": 4,
+              "value": "P0 - Critical",
+              "importance": "critical"
+            },
+            {
+              "type": "status",
+              "order": 5,
+              "value": "Resolved",
+              "importance": "high"
+            },
+            {
+              "type": "attachments",
+              "order": 6,
+              "files": [
+                {"name": "screenshot_error.png", "size": "2.3MB", "preview_mode": "fullscreen_overlay"},
+                {"name": "transaction_logs.txt", "size": "15.8MB", "preview_mode": "fullscreen_overlay"}
+              ]
+            },
+            {
+              "type": "related_tickets",
+              "order": 7,
+              "collapsed": false,
+              "tickets": ["TKT-2024-002", "TKT-2024-003", "TKT-2023-999"]
+            }
+          ]
+        }
+      },
+      "expected_behavior": {
+        "hierarchy_restructured": true,
+        "core_info_at_top": ["description", "priority", "status"],
+        "collapsible_sections": ["history", "related_tickets"],
+        "default_collapsed": ["history", "related_tickets"],
+        "attachment_preview_mode": "side_panel_or_inline",
+        "scroll_reduction_percentage": 60
+      },
+      "expected_output": {
+        "status": "success",
+        "metrics": {
+          "hierarchy_clarity_score": 0.85,
+          "scroll_length_reduction": 0.60,
+          "mis_operation_risk": 0.1
+        },
+        "ui_warnings": [],
+        "edge_case_flags": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "scenario_2_misoperation_risk",
+      "name": "Internal Note vs Customer Reply Confusion",
+      "description": "Ticket with internal notes and customer-visible replies that look identical, causing mis-operations",
+      "input": {
+        "ticket_id": "TKT-2024-002",
+        "layout_structure": {
+          "sections": [
+            {
+              "type": "description",
+              "order": 1,
+              "content": "Login system occasionally returns 401 error",
+              "importance": "high"
+            },
+            {
+              "type": "priority",
+              "order": 2,
+              "value": "P1 - High",
+              "importance": "high"
+            },
+            {
+              "type": "status",
+              "order": 3,
+              "value": "In Progress",
+              "importance": "high"
+            },
+            {
+              "type": "communication",
+              "order": 4,
+              "items": [
+                {
+                  "message_type": "internal_note",
+                  "content": "Customer is extremely frustrated. Consider offering service credit. DO NOT share our internal debugging steps.",
+                  "visual_distinction": "none",
+                  "confirmation_required": false
+                },
+                {
+                  "message_type": "customer_reply",
+                  "content": "We are investigating this issue and will update you shortly.",
+                  "visual_distinction": "none",
+                  "confirmation_required": false
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "expected_behavior": {
+        "internal_notes_visually_distinct": true,
+        "customer_reply_visually_distinct": true,
+        "confirmation_prompts": ["customer_reply", "status_change"],
+        "color_coding": {
+          "internal_note": "amber/yellow",
+          "customer_reply": "blue/customer_facing"
+        }
+      },
+      "expected_output": {
+        "status": "success",
+        "metrics": {
+          "hierarchy_clarity_score": 0.80,
+          "scroll_length_reduction": 0.20,
+          "mis_operation_risk": 0.05
+        },
+        "ui_warnings": ["mis_operation_risk_detected"],
+        "edge_case_flags": ["communication_distinction_required"],
+        "errors": []
+      }
+    },
+    {
+      "id": "scenario_3_extreme_scroll",
+      "name": "Extremely Long History Timeline",
+      "description": "Ticket with 100+ history entries causing excessive scrolling",
+      "input": {
+        "ticket_id": "TKT-2024-003",
+        "layout_structure": {
+          "sections": [
+            {
+              "type": "description",
+              "order": 1,
+              "content": "Recurring database connection pool exhaustion",
+              "importance": "critical"
+            },
+            {
+              "type": "priority",
+              "order": 2,
+              "value": "P0 - Critical",
+              "importance": "critical"
+            },
+            {
+              "type": "status",
+              "order": 3,
+              "value": "Monitoring",
+              "importance": "high"
+            },
+            {
+              "type": "history",
+              "order": 4,
+              "collapsed": false,
+              "entries": "_GENERATE_150_ENTRIES_"
+            },
+            {
+              "type": "logs",
+              "order": 5,
+              "collapsed": false,
+              "content": "_LARGE_LOG_CONTENT_50KB_"
+            }
+          ]
+        }
+      },
+      "expected_behavior": {
+        "history_collapsed_by_default": true,
+        "logs_collapsed_by_default": true,
+        "pagination_or_lazy_load": true,
+        "scroll_reduction_percentage": 85
+      },
+      "expected_output": {
+        "status": "success",
+        "metrics": {
+          "hierarchy_clarity_score": 0.90,
+          "scroll_length_reduction": 0.85,
+          "mis_operation_risk": 0.05
+        },
+        "ui_warnings": ["extreme_content_length"],
+        "edge_case_flags": ["long_history_detected"],
+        "errors": []
+      }
+    },
+    {
+      "id": "scenario_4_deep_nesting",
+      "name": "Complex Deeply Nested Layout Tree",
+      "description": "Ticket with deeply nested section hierarchy requiring intelligent grouping",
+      "input": {
+        "ticket_id": "TKT-2024-004",
+        "layout_structure": {
+          "sections": [
+            {
+              "type": "composite",
+              "order": 1,
+              "children": [
+                {
+                  "type": "metadata",
+                  "children": [
+                    {"type": "field", "key": "ticket_number", "value": "TKT-2024-004"},
+                    {"type": "field", "key": "category", "value": "Technical"},
+                    {
+                      "type": "nested_group",
+                      "children": [
+                        {"type": "field", "key": "subcategory", "value": "Database"},
+                        {"type": "field", "key": "component", "value": "Connection Pool"}
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "description",
+                  "importance": "critical",
+                  "content": "Critical system outage affecting all users"
+                },
+                {
+                  "type": "nested_details",
+                  "children": [
+                    {
+                      "type": "priority",
+                      "value": "P0 - Critical",
+                      "importance": "critical"
+                    },
+                    {
+                      "type": "status_group",
+                      "children": [
+                        {"type": "status", "value": "Investigating", "importance": "high"},
+                        {"type": "substatus", "value": "Root cause identified"}
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "history",
+              "order": 2,
+              "collapsed": false,
+              "entries": [
+                {"timestamp": "2024-01-20T10:00:00Z", "actor": "Customer", "action": "Reported issue"}
+              ]
+            }
+          ]
+        }
+      },
+      "expected_behavior": {
+        "flatten_and_regroup": true,
+        "extract_core_fields": ["description", "priority", "status"],
+        "collapse_metadata": true,
+        "hierarchy_normalization": true
+      },
+      "expected_output": {
+        "status": "success",
+        "metrics": {
+          "hierarchy_clarity_score": 0.75,
+          "scroll_length_reduction": 0.40,
+          "mis_operation_risk": 0.10
+        },
+        "ui_warnings": ["complex_nesting_detected"],
+        "edge_case_flags": ["deep_nesting_flattened"],
+        "errors": []
+      }
+    },
+    {
+      "id": "scenario_5_malformed_input",
+      "name": "Malformed Input with Missing Fields and Unsafe HTML",
+      "description": "Ticket with missing required fields, type mismatches, and unsafe HTML requiring safe fallback",
+      "input": {
+        "ticket_id": "TKT-2024-005",
+        "layout_structure": {
+          "sections": [
+            {
+              "type": "description",
+              "order": "invalid_not_a_number",
+              "content": "<script>alert('XSS')</script><img src=x onerror=alert('XSS2')>Malicious content",
+              "importance": "critical"
+            },
+            {
+              "type": "priority",
+              "order": 2,
+              "value": null,
+              "importance": "unknown_importance_level"
+            },
+            {
+              "type": "unknown_section_type",
+              "order": 3,
+              "data": {"foo": "bar"}
+            },
+            {
+              "type": "status",
+              "value": 12345,
+              "importance": "high"
+            },
+            {
+              "type": "history",
+              "collapsed": "not_a_boolean",
+              "entries": "should_be_array_but_is_string"
+            },
+            {
+              "type": "attachments",
+              "files": [
+                {"name": "../../../etc/passwd", "size": "unknown", "preview_mode": "invalid_mode"}
+              ]
+            }
+          ]
+        }
+      },
+      "expected_behavior": {
+        "sanitize_html": true,
+        "handle_missing_fields": true,
+        "type_coercion_or_skip": true,
+        "safe_fallback_for_unknowns": true,
+        "prevent_path_traversal": true
+      },
+      "expected_output": {
+        "status": "partial_success",
+        "metrics": {
+          "hierarchy_clarity_score": 0.50,
+          "scroll_length_reduction": 0.30,
+          "mis_operation_risk": 0.15
+        },
+        "ui_warnings": [
+          "html_sanitization_applied",
+          "unknown_section_type_skipped",
+          "type_mismatch_corrected",
+          "malformed_structure_detected"
+        ],
+        "edge_case_flags": [
+          "xss_attempt_blocked",
+          "path_traversal_prevented",
+          "invalid_types_handled"
+        ],
+        "errors": [
+          "Invalid order value for description section",
+          "Priority value is null",
+          "History entries is not an array",
+          "Status value should be string"
+        ]
+      }
+    },
+    {
+      "id": "scenario_6_attachment_blocking",
+      "name": "Attachment Preview Blocking Context",
+      "description": "Ticket where fullscreen attachment preview blocks access to ticket information",
+      "input": {
+        "ticket_id": "TKT-2024-006",
+        "layout_structure": {
+          "sections": [
+            {
+              "type": "description",
+              "order": 1,
+              "content": "Screenshot shows the exact error - please review attachment",
+              "importance": "high"
+            },
+            {
+              "type": "priority",
+              "order": 2,
+              "value": "P2 - Medium",
+              "importance": "medium"
+            },
+            {
+              "type": "status",
+              "order": 3,
+              "value": "Waiting for Info",
+              "importance": "high"
+            },
+            {
+              "type": "attachments",
+              "order": 4,
+              "files": [
+                {
+                  "name": "error_screenshot.png",
+                  "size": "1.2MB",
+                  "preview_mode": "fullscreen_overlay",
+                  "blocks_context": true
+                },
+                {
+                  "name": "system_diagnostics.pdf",
+                  "size": "4.5MB",
+                  "preview_mode": "fullscreen_overlay",
+                  "blocks_context": true
+                }
+              ]
+            },
+            {
+              "type": "history",
+              "order": 5,
+              "collapsed": false,
+              "entries": [
+                {"timestamp": "2024-01-20T10:00:00Z", "actor": "Customer", "action": "Uploaded screenshot"}
+              ]
+            }
+          ]
+        }
+      },
+      "expected_behavior": {
+        "attachment_preview_non_blocking": true,
+        "preview_mode": "side_panel",
+        "fallback_preview_mode": "inline_thumbnail",
+        "maintain_context_visibility": true
+      },
+      "expected_output": {
+        "status": "success",
+        "metrics": {
+          "hierarchy_clarity_score": 0.80,
+          "scroll_length_reduction": 0.35,
+          "mis_operation_risk": 0.08
+        },
+        "ui_warnings": ["attachment_preview_optimized"],
+        "edge_case_flags": ["fullscreen_overlay_replaced"],
+        "errors": []
+      }
+    }
+  ]
+}

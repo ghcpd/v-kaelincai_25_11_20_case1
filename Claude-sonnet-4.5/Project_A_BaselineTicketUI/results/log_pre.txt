@@ -1,0 +1,163 @@
+================================================================================
+BASELINE TICKET UI - DETAILED TEST LOG
+================================================================================
+
+Test Run: 2025-11-20T11:34:43.560530
+
+
+================================================================================
+Test Case 1: Normal Overloaded Ticket Layout
+================================================================================
+Scenario ID: scenario_1_normal_overload
+Status: failed
+
+Actual Metrics:
+  hierarchy_clarity_score: 0.1
+  scroll_length_reduction: 0.0
+  mis_operation_risk: 0.3
+
+Validation Issues:
+  - hierarchy_clarity_score: expected ~0.85, got 0.1 (delta: 0.75)
+  - scroll_length_reduction: expected ~0.6, got 0.0 (delta: 0.60)
+
+Behavior Validation:
+  All Expectations Met: False
+  Unmet Expectations:
+    - hierarchy_not_restructured
+    - no_collapsible_sections
+    - history_not_collapsed_by_default
+    - related_tickets_not_collapsed_by_default
+    - attachment_preview_not_optimized
+
+Warnings:
+  None
+
+Errors:
+  None
+
+
+================================================================================
+Test Case 2: Internal Note vs Customer Reply Confusion
+================================================================================
+Scenario ID: scenario_2_misoperation_risk
+Status: failed
+
+Actual Metrics:
+  hierarchy_clarity_score: 0.1
+  scroll_length_reduction: 0.0
+  mis_operation_risk: 0.5
+
+Validation Issues:
+  - hierarchy_clarity_score: expected ~0.8, got 0.1 (delta: 0.70)
+  - mis_operation_risk: expected ~0.05, got 0.5 (delta: 0.45)
+
+Behavior Validation:
+  All Expectations Met: False
+  Unmet Expectations:
+    - internal_notes_not_visually_distinct
+
+Warnings:
+  None
+
+Errors:
+  None
+
+
+================================================================================
+Test Case 3: Extremely Long History Timeline
+================================================================================
+Scenario ID: scenario_3_extreme_scroll
+Status: failed
+
+Actual Metrics:
+  hierarchy_clarity_score: 0.1
+  scroll_length_reduction: 0.0
+  mis_operation_risk: 0.3
+
+Validation Issues:
+  - hierarchy_clarity_score: expected ~0.9, got 0.1 (delta: 0.80)
+  - scroll_length_reduction: expected ~0.85, got 0.0 (delta: 0.85)
+
+Behavior Validation:
+  All Expectations Met: True
+
+Warnings:
+  None
+
+Errors:
+  None
+
+
+================================================================================
+Test Case 4: Complex Deeply Nested Layout Tree
+================================================================================
+Scenario ID: scenario_4_deep_nesting
+Status: failed
+
+Actual Metrics:
+  hierarchy_clarity_score: 0.4
+  scroll_length_reduction: 0.0
+  mis_operation_risk: 0.3
+
+Validation Issues:
+  - hierarchy_clarity_score: expected ~0.75, got 0.4 (delta: 0.35)
+  - scroll_length_reduction: expected ~0.4, got 0.0 (delta: 0.40)
+
+Behavior Validation:
+  All Expectations Met: True
+
+Warnings:
+  None
+
+Errors:
+  None
+
+
+================================================================================
+Test Case 5: Malformed Input with Missing Fields and Unsafe HTML
+================================================================================
+Scenario ID: scenario_5_malformed_input
+Status: failed
+
+Actual Metrics:
+  hierarchy_clarity_score: 0.1
+  scroll_length_reduction: 0.0
+  mis_operation_risk: 0.3
+
+Validation Issues:
+  - hierarchy_clarity_score: expected ~0.5, got 0.1 (delta: 0.40)
+
+Behavior Validation:
+  All Expectations Met: True
+
+Warnings:
+  None
+
+Errors:
+  None
+
+
+================================================================================
+Test Case 6: Attachment Preview Blocking Context
+================================================================================
+Scenario ID: scenario_6_attachment_blocking
+Status: failed
+
+Actual Metrics:
+  hierarchy_clarity_score: 0.1
+  scroll_length_reduction: 0.0
+  mis_operation_risk: 0.3
+
+Validation Issues:
+  - hierarchy_clarity_score: expected ~0.8, got 0.1 (delta: 0.70)
+  - scroll_length_reduction: expected ~0.35, got 0.0 (delta: 0.35)
+
+Behavior Validation:
+  All Expectations Met: True
+
+Warnings:
+  None
+
+Errors:
+  None
+

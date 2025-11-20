@@ -1,0 +1,207 @@
+================================================================================
+ENHANCED TICKET UI - DETAILED TEST LOG
+================================================================================
+
+Test Run: 2025-11-20T11:34:43.871000
+
+
+================================================================================
+Test Case 1: Normal Overloaded Ticket Layout
+================================================================================
+Scenario ID: scenario_1_normal_overload
+Status: failed
+
+Actual Metrics:
+  hierarchy_clarity_score: 1.0
+  scroll_length_reduction: 1.0
+  mis_operation_risk: 0.05
+
+Validation Issues:
+  - scroll_length_reduction: expected ~0.6, got 1.0 (delta: 0.40)
+
+Behavior Validation:
+  All Expectations Met: True
+  Met Expectations:
+    ✓ hierarchy_restructured
+    ✓ core_info_at_top
+    ✓ history_collapsible
+    ✓ related_tickets_collapsible
+    ✓ history_collapsed_by_default
+    ✓ related_tickets_collapsed_by_default
+
+Warnings:
+  - attachment_preview_optimized
+  - attachment_preview_optimized
+
+Errors:
+  None
+
+Edge Case Flags:
+  - fullscreen_overlay_replaced
+  - fullscreen_overlay_replaced
+
+
+================================================================================
+Test Case 2: Internal Note vs Customer Reply Confusion
+================================================================================
+Scenario ID: scenario_2_misoperation_risk
+Status: passed
+
+Actual Metrics:
+  hierarchy_clarity_score: 0.8
+  scroll_length_reduction: 0.0
+  mis_operation_risk: 0.0
+
+Validation Issues:
+  None
+
+Behavior Validation:
+  All Expectations Met: True
+  Met Expectations:
+    ✓ internal_notes_visually_distinct
+    ✓ customer_reply_visually_distinct
+    ✓ confirmation_for_customer_reply
+
+Warnings:
+  - mis_operation_risk_detected
+
+Errors:
+  None
+
+Edge Case Flags:
+  - communication_distinction_required
+
+
+================================================================================
+Test Case 3: Extremely Long History Timeline
+================================================================================
+Scenario ID: scenario_3_extreme_scroll
+Status: passed
+
+Actual Metrics:
+  hierarchy_clarity_score: 1.0
+  scroll_length_reduction: 0.7
+  mis_operation_risk: 0.05
+
+Validation Issues:
+  None
+
+Behavior Validation:
+  All Expectations Met: True
+
+Warnings:
+  - extreme_content_length
+
+Errors:
+  None
+
+Edge Case Flags:
+  - long_history_detected
+
+
+================================================================================
+Test Case 4: Complex Deeply Nested Layout Tree
+================================================================================
+Scenario ID: scenario_4_deep_nesting
+Status: failed
+
+Actual Metrics:
+  hierarchy_clarity_score: 1.0
+  scroll_length_reduction: 0.7
+  mis_operation_risk: 0.05
+
+Validation Issues:
+  - hierarchy_clarity_score: expected ~0.75, got 1.0 (delta: 0.25)
+  - scroll_length_reduction: expected ~0.4, got 0.7 (delta: 0.30)
+
+Behavior Validation:
+  All Expectations Met: True
+
+Warnings:
+  - complex_nesting_detected
+  - unknown_section_type_skipped: substatus
+
+Errors:
+  None
+
+Edge Case Flags:
+  - deep_nesting_flattened
+  - deep_nesting_flattened
+  - deep_nesting_flattened
+  - unknown_type_substatus
+
+
+================================================================================
+Test Case 5: Malformed Input with Missing Fields and Unsafe HTML
+================================================================================
+Scenario ID: scenario_5_malformed_input
+Status: failed
+
+Actual Metrics:
+  hierarchy_clarity_score: 0.8
+  scroll_length_reduction: 1.0
+  mis_operation_risk: 0.15
+
+Validation Issues:
+  - hierarchy_clarity_score: expected ~0.5, got 0.8 (delta: 0.30)
+  - scroll_length_reduction: expected ~0.3, got 1.0 (delta: 0.70)
+
+Behavior Validation:
+  All Expectations Met: True
+  Met Expectations:
+    ✓ html_sanitized
+    ✓ path_traversal_prevented
+
+Warnings:
+  - type_mismatch_corrected
+  - html_sanitization_applied
+  - type_mismatch_corrected
+  - unknown_section_type_skipped: unknown_section_type
+  - type_mismatch_corrected
+  - type_mismatch_corrected
+  - malformed_structure_detected
+  - malformed_structure_detected
+
+Errors:
+  - Invalid order value for description section
+  - Priority value is null
+  - Status value should be string
+  - History entries is not an array
+
+Edge Case Flags:
+  - xss_attempt_blocked
+  - unknown_type_unknown_section_type
+  - path_traversal_prevented
+  - invalid_types_handled
+
+
+================================================================================
+Test Case 6: Attachment Preview Blocking Context
+================================================================================
+Scenario ID: scenario_6_attachment_blocking
+Status: failed
+
+Actual Metrics:
+  hierarchy_clarity_score: 1.0
+  scroll_length_reduction: 1.0
+  mis_operation_risk: 0.05
+
+Validation Issues:
+  - scroll_length_reduction: expected ~0.35, got 1.0 (delta: 0.65)
+
+Behavior Validation:
+  All Expectations Met: True
+  Met Expectations:
+    ✓ attachment_preview_non_blocking
+
+Warnings:
+  - attachment_preview_optimized
+  - attachment_preview_optimized
+
+Errors:
+  None
+
+Edge Case Flags:
+  - fullscreen_overlay_replaced
+  - fullscreen_overlay_replaced
+

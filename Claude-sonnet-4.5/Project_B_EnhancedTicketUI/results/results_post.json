@@ -1,0 +1,1702 @@
+{
+  "summary": {
+    "total_scenarios": 6,
+    "passed": 2,
+    "failed": 4,
+    "partial_success": 0,
+    "edge_cases_covered": 14,
+    "total_errors": 4,
+    "total_warnings": 16
+  },
+  "average_metrics": {
+    "hierarchy_clarity_score": 0.93,
+    "scroll_length_reduction": 0.73,
+    "mis_operation_risk": 0.06
+  },
+  "results": [
+    {
+      "scenario_id": "scenario_1_normal_overload",
+      "scenario_name": "Normal Overloaded Ticket Layout",
+      "test_status": "failed",
+      "validation_details": {
+        "status": "failed",
+        "issues": [
+          "scroll_length_reduction: expected ~0.6, got 1.0 (delta: 0.40)"
+        ],
+        "warnings": [],
+        "metrics_comparison": {
+          "hierarchy_clarity_score": {
+            "expected": 0.85,
+            "actual": 1.0,
+            "delta": 0.15
+          },
+          "scroll_length_reduction": {
+            "expected": 0.6,
+            "actual": 1.0,
+            "delta": 0.4
+          },
+          "mis_operation_risk": {
+            "expected": 0.1,
+            "actual": 0.05,
+            "delta": 0.05
+          }
+        },
+        "behavior_validation": {
+          "all_met": true,
+          "met_expectations": [
+            "hierarchy_restructured",
+            "core_info_at_top",
+            "history_collapsible",
+            "related_tickets_collapsible",
+            "history_collapsed_by_default",
+            "related_tickets_collapsed_by_default"
+          ],
+          "unmet_expectations": []
+        }
+      },
+      "actual_output": {
+        "status": "success",
+        "ticket_id": "TKT-2024-001",
+        "processed_sections": [
+          {
+            "type": "description",
+            "order": 2,
+            "content": "Customer reports critical payment gateway timeout affecting 500+ transactions per hour. Revenue impact estimated at $50K/hour.",
+            "importance": "critical",
+            "collapsed": false,
+            "visual_hierarchy": "prominent",
+            "position": "top",
+            "display_order": 0,
+            "collapsible": false
+          },
+          {
+            "type": "priority",
+            "order": 4,
+            "importance": "critical",
+            "value": "P0 - Critical",
+            "visual_hierarchy": "prominent",
+            "position": "top",
+            "display_order": 1,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "status",
+            "order": 5,
+            "importance": "high",
+            "value": "Resolved",
+            "visual_hierarchy": "prominent",
+            "position": "top",
+            "display_order": 2,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "metadata",
+            "order": 1,
+            "importance": "normal",
+            "fields": [
+              {
+                "key": "ticket_number",
+                "value": "TKT-2024-001",
+                "importance": "low"
+              },
+              {
+                "key": "created_at",
+                "value": "2024-01-15T10:30:00Z",
+                "importance": "low"
+              },
+              {
+                "key": "updated_at",
+                "value": "2024-01-20T14:22:00Z",
+                "importance": "low"
+              }
+            ],
+            "visual_hierarchy": "secondary",
+            "position": "below_core",
+            "display_order": 3,
+            "collapsible": true,
+            "collapsed": false,
+            "default_state": "expanded"
+          },
+          {
+            "type": "history",
+            "order": 3,
+            "importance": "normal",
+            "collapsed": true,
+            "entries": [
+              {
+                "timestamp": "2024-01-15T10:30:00Z",
+                "actor": "Customer",
+                "action": "Created ticket"
+              },
+              {
+                "timestamp": "2024-01-15T10:35:00Z",
+                "actor": "Agent Smith",
+                "action": "Acknowledged"
+              },
+              {
+                "timestamp": "2024-01-15T11:00:00Z",
+                "actor": "Agent Smith",
+                "action": "Added internal note"
+              },
+              {
+                "timestamp": "2024-01-15T11:30:00Z",
+                "actor": "Agent Smith",
+                "action": "Escalated to Tier 2"
+              },
+              {
+                "timestamp": "2024-01-16T09:00:00Z",
+                "actor": "Engineer Jane",
+                "action": "Started investigation"
+              },
+              {
+                "timestamp": "2024-01-16T14:00:00Z",
+                "actor": "Engineer Jane",
+                "action": "Identified root cause"
+              },
+              {
+                "timestamp": "2024-01-17T10:00:00Z",
+                "actor": "Engineer Jane",
+                "action": "Deployed fix to staging"
+              },
+              {
+                "timestamp": "2024-01-18T10:00:00Z",
+                "actor": "Engineer Jane",
+                "action": "Deployed fix to production"
+              },
+              {
+                "timestamp": "2024-01-19T10:00:00Z",
+                "actor": "Agent Smith",
+                "action": "Verified fix"
+              },
+              {
+                "timestamp": "2024-01-20T14:22:00Z",
+                "actor": "Customer",
+                "action": "Confirmed resolution"
+              }
+            ],
+            "visual_hierarchy": "secondary",
+            "position": "below_core",
+            "display_order": 4,
+            "collapsible": true,
+            "default_state": "collapsed"
+          },
+          {
+            "type": "attachments",
+            "order": 6,
+            "importance": "normal",
+            "files": [
+              {
+                "name": "screenshot_error.png",
+                "size": "2.3MB",
+                "preview_mode": "side_panel",
+                "preview_fallback": "inline_thumbnail",
+                "blocks_context": false
+              },
+              {
+                "name": "transaction_logs.txt",
+                "size": "15.8MB",
+                "preview_mode": "side_panel",
+                "preview_fallback": "inline_thumbnail",
+                "blocks_context": false
+              }
+            ],
+            "visual_hierarchy": "secondary",
+            "position": "below_core",
+            "display_order": 5,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "related_tickets",
+            "order": 7,
+            "importance": "normal",
+            "collapsed": true,
+            "tickets": [
+              "TKT-2024-002",
+              "TKT-2024-003",
+              "TKT-2023-999"
+            ],
+            "visual_hierarchy": "secondary",
+            "position": "below_core",
+            "display_order": 6,
+            "collapsible": true,
+            "default_state": "collapsed"
+          }
+        ],
+        "metrics": {
+          "hierarchy_clarity_score": 1.0,
+          "scroll_length_reduction": 1.0,
+          "mis_operation_risk": 0.05
+        },
+        "ui_warnings": [
+          "attachment_preview_optimized",
+          "attachment_preview_optimized"
+        ],
+        "edge_case_flags": [
+          "fullscreen_overlay_replaced",
+          "fullscreen_overlay_replaced"
+        ],
+        "errors": []
+      },
+      "expected_output": {
+        "status": "success",
+        "metrics": {
+          "hierarchy_clarity_score": 0.85,
+          "scroll_length_reduction": 0.6,
+          "mis_operation_risk": 0.1
+        },
+        "ui_warnings": [],
+        "edge_case_flags": [],
+        "errors": []
+      }
+    },
+    {
+      "scenario_id": "scenario_2_misoperation_risk",
+      "scenario_name": "Internal Note vs Customer Reply Confusion",
+      "test_status": "passed",
+      "validation_details": {
+        "status": "passed",
+        "issues": [],
+        "warnings": [],
+        "metrics_comparison": {
+          "hierarchy_clarity_score": {
+            "expected": 0.8,
+            "actual": 0.8,
+            "delta": 0.0
+          },
+          "scroll_length_reduction": {
+            "expected": 0.2,
+            "actual": 0.0,
+            "delta": 0.2
+          },
+          "mis_operation_risk": {
+            "expected": 0.05,
+            "actual": 0.0,
+            "delta": 0.05
+          }
+        },
+        "behavior_validation": {
+          "all_met": true,
+          "met_expectations": [
+            "internal_notes_visually_distinct",
+            "customer_reply_visually_distinct",
+            "confirmation_for_customer_reply"
+          ],
+          "unmet_expectations": []
+        }
+      },
+      "actual_output": {
+        "status": "success",
+        "ticket_id": "TKT-2024-002",
+        "processed_sections": [
+          {
+            "type": "description",
+            "order": 1,
+            "content": "Login system occasionally returns 401 error",
+            "importance": "high",
+            "visual_hierarchy": "prominent",
+            "position": "top",
+            "display_order": 0,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "priority",
+            "order": 2,
+            "importance": "high",
+            "value": "P1 - High",
+            "visual_hierarchy": "prominent",
+            "position": "top",
+            "display_order": 1,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "status",
+            "order": 3,
+            "importance": "high",
+            "value": "In Progress",
+            "visual_hierarchy": "prominent",
+            "position": "top",
+            "display_order": 2,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "communication",
+            "order": 4,
+            "importance": "normal",
+            "items": [
+              {
+                "message_type": "internal_note",
+                "content": "Customer is extremely frustrated. Consider offering service credit. DO NOT share our internal debugging steps.",
+                "visual_distinction": "amber_background",
+                "confirmation_required": false,
+                "color_scheme": "amber_yellow_warning",
+                "icon": "lock_internal"
+              },
+              {
+                "message_type": "customer_reply",
+                "content": "We are investigating this issue and will update you shortly.",
+                "visual_distinction": "blue_background",
+                "confirmation_required": true,
+                "color_scheme": "blue_customer_facing",
+                "icon": "send_customer",
+                "confirmation_message": "This message will be visible to the customer. Continue?"
+              }
+            ],
+            "visual_hierarchy": "secondary",
+            "position": "below_core",
+            "display_order": 3,
+            "collapsible": false,
+            "collapsed": false
+          }
+        ],
+        "metrics": {
+          "hierarchy_clarity_score": 0.8,
+          "scroll_length_reduction": 0.0,
+          "mis_operation_risk": 0.0
+        },
+        "ui_warnings": [
+          "mis_operation_risk_detected"
+        ],
+        "edge_case_flags": [
+          "communication_distinction_required"
+        ],
+        "errors": []
+      },
+      "expected_output": {
+        "status": "success",
+        "metrics": {
+          "hierarchy_clarity_score": 0.8,
+          "scroll_length_reduction": 0.2,
+          "mis_operation_risk": 0.05
+        },
+        "ui_warnings": [
+          "mis_operation_risk_detected"
+        ],
+        "edge_case_flags": [
+          "communication_distinction_required"
+        ],
+        "errors": []
+      }
+    },
+    {
+      "scenario_id": "scenario_3_extreme_scroll",
+      "scenario_name": "Extremely Long History Timeline",
+      "test_status": "passed",
+      "validation_details": {
+        "status": "passed",
+        "issues": [],
+        "warnings": [],
+        "metrics_comparison": {
+          "hierarchy_clarity_score": {
+            "expected": 0.9,
+            "actual": 1.0,
+            "delta": 0.1
+          },
+          "scroll_length_reduction": {
+            "expected": 0.85,
+            "actual": 0.7,
+            "delta": 0.15
+          },
+          "mis_operation_risk": {
+            "expected": 0.05,
+            "actual": 0.05,
+            "delta": 0.0
+          }
+        },
+        "behavior_validation": {
+          "all_met": true,
+          "met_expectations": [],
+          "unmet_expectations": []
+        }
+      },
+      "actual_output": {
+        "status": "success",
+        "ticket_id": "TKT-2024-003",
+        "processed_sections": [
+          {
+            "type": "description",
+            "order": 1,
+            "content": "Recurring database connection pool exhaustion",
+            "importance": "critical",
+            "visual_hierarchy": "prominent",
+            "position": "top",
+            "display_order": 0,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "priority",
+            "order": 2,
+            "importance": "critical",
+            "value": "P0 - Critical",
+            "visual_hierarchy": "prominent",
+            "position": "top",
+            "display_order": 1,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "status",
+            "order": 3,
+            "importance": "high",
+            "value": "Monitoring",
+            "visual_hierarchy": "prominent",
+            "position": "top",
+            "display_order": 2,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "history",
+            "order": 4,
+            "importance": "normal",
+            "collapsed": true,
+            "entries": [
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 0",
+                "action": "Action 0"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 1",
+                "action": "Action 1"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 2",
+                "action": "Action 2"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 3",
+                "action": "Action 3"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 4",
+                "action": "Action 4"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 5",
+                "action": "Action 5"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 6",
+                "action": "Action 6"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 7",
+                "action": "Action 7"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 8",
+                "action": "Action 8"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 9",
+                "action": "Action 9"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 0",
+                "action": "Action 10"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 1",
+                "action": "Action 11"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 2",
+                "action": "Action 12"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 3",
+                "action": "Action 13"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 4",
+                "action": "Action 14"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 5",
+                "action": "Action 15"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 6",
+                "action": "Action 16"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 7",
+                "action": "Action 17"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 8",
+                "action": "Action 18"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 9",
+                "action": "Action 19"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 0",
+                "action": "Action 20"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 1",
+                "action": "Action 21"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 2",
+                "action": "Action 22"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 3",
+                "action": "Action 23"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 4",
+                "action": "Action 24"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 5",
+                "action": "Action 25"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 6",
+                "action": "Action 26"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 7",
+                "action": "Action 27"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 8",
+                "action": "Action 28"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 9",
+                "action": "Action 29"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 0",
+                "action": "Action 30"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 1",
+                "action": "Action 31"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 2",
+                "action": "Action 32"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 3",
+                "action": "Action 33"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 4",
+                "action": "Action 34"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 5",
+                "action": "Action 35"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 6",
+                "action": "Action 36"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 7",
+                "action": "Action 37"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 8",
+                "action": "Action 38"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 9",
+                "action": "Action 39"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 0",
+                "action": "Action 40"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 1",
+                "action": "Action 41"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 2",
+                "action": "Action 42"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 3",
+                "action": "Action 43"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 4",
+                "action": "Action 44"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 5",
+                "action": "Action 45"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 6",
+                "action": "Action 46"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 7",
+                "action": "Action 47"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 8",
+                "action": "Action 48"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 9",
+                "action": "Action 49"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 0",
+                "action": "Action 50"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 1",
+                "action": "Action 51"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 2",
+                "action": "Action 52"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 3",
+                "action": "Action 53"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 4",
+                "action": "Action 54"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 5",
+                "action": "Action 55"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 6",
+                "action": "Action 56"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 7",
+                "action": "Action 57"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 8",
+                "action": "Action 58"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 9",
+                "action": "Action 59"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 0",
+                "action": "Action 60"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 1",
+                "action": "Action 61"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 2",
+                "action": "Action 62"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 3",
+                "action": "Action 63"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 4",
+                "action": "Action 64"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 5",
+                "action": "Action 65"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 6",
+                "action": "Action 66"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 7",
+                "action": "Action 67"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 8",
+                "action": "Action 68"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 9",
+                "action": "Action 69"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 0",
+                "action": "Action 70"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 1",
+                "action": "Action 71"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 2",
+                "action": "Action 72"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 3",
+                "action": "Action 73"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 4",
+                "action": "Action 74"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 5",
+                "action": "Action 75"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 6",
+                "action": "Action 76"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 7",
+                "action": "Action 77"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 8",
+                "action": "Action 78"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 9",
+                "action": "Action 79"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 0",
+                "action": "Action 80"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 1",
+                "action": "Action 81"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 2",
+                "action": "Action 82"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 3",
+                "action": "Action 83"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 4",
+                "action": "Action 84"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 5",
+                "action": "Action 85"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 6",
+                "action": "Action 86"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 7",
+                "action": "Action 87"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 8",
+                "action": "Action 88"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 9",
+                "action": "Action 89"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 0",
+                "action": "Action 90"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 1",
+                "action": "Action 91"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 2",
+                "action": "Action 92"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 3",
+                "action": "Action 93"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 4",
+                "action": "Action 94"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 5",
+                "action": "Action 95"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 6",
+                "action": "Action 96"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 7",
+                "action": "Action 97"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 8",
+                "action": "Action 98"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 9",
+                "action": "Action 99"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 0",
+                "action": "Action 100"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 1",
+                "action": "Action 101"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 2",
+                "action": "Action 102"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 3",
+                "action": "Action 103"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 4",
+                "action": "Action 104"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 5",
+                "action": "Action 105"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 6",
+                "action": "Action 106"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 7",
+                "action": "Action 107"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 8",
+                "action": "Action 108"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 9",
+                "action": "Action 109"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 0",
+                "action": "Action 110"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 1",
+                "action": "Action 111"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 2",
+                "action": "Action 112"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 3",
+                "action": "Action 113"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 4",
+                "action": "Action 114"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 5",
+                "action": "Action 115"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 6",
+                "action": "Action 116"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 7",
+                "action": "Action 117"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 8",
+                "action": "Action 118"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 9",
+                "action": "Action 119"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 0",
+                "action": "Action 120"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 1",
+                "action": "Action 121"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 2",
+                "action": "Action 122"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 3",
+                "action": "Action 123"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 4",
+                "action": "Action 124"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 5",
+                "action": "Action 125"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 6",
+                "action": "Action 126"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 7",
+                "action": "Action 127"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 8",
+                "action": "Action 128"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 9",
+                "action": "Action 129"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 0",
+                "action": "Action 130"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 1",
+                "action": "Action 131"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 2",
+                "action": "Action 132"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 3",
+                "action": "Action 133"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 4",
+                "action": "Action 134"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 5",
+                "action": "Action 135"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 6",
+                "action": "Action 136"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 7",
+                "action": "Action 137"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 8",
+                "action": "Action 138"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 9",
+                "action": "Action 139"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 0",
+                "action": "Action 140"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 1",
+                "action": "Action 141"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 2",
+                "action": "Action 142"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 3",
+                "action": "Action 143"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 4",
+                "action": "Action 144"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 5",
+                "action": "Action 145"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 6",
+                "action": "Action 146"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 7",
+                "action": "Action 147"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 8",
+                "action": "Action 148"
+              },
+              {
+                "timestamp": "2024-01-15T10:00:00Z",
+                "actor": "User 9",
+                "action": "Action 149"
+              }
+            ],
+            "visual_hierarchy": "secondary",
+            "position": "below_core",
+            "display_order": 3,
+            "collapsible": true,
+            "default_state": "collapsed",
+            "ui_hint": "Long history (150 entries) - collapsed by default"
+          },
+          {
+            "type": "logs",
+            "order": 5,
+            "content": "_LARGE_LOG_CONTENT_50KB_",
+            "importance": "normal",
+            "collapsed": true,
+            "visual_hierarchy": "secondary",
+            "position": "below_core",
+            "display_order": 4,
+            "collapsible": true,
+            "default_state": "collapsed"
+          }
+        ],
+        "metrics": {
+          "hierarchy_clarity_score": 1.0,
+          "scroll_length_reduction": 0.7,
+          "mis_operation_risk": 0.05
+        },
+        "ui_warnings": [
+          "extreme_content_length"
+        ],
+        "edge_case_flags": [
+          "long_history_detected"
+        ],
+        "errors": []
+      },
+      "expected_output": {
+        "status": "success",
+        "metrics": {
+          "hierarchy_clarity_score": 0.9,
+          "scroll_length_reduction": 0.85,
+          "mis_operation_risk": 0.05
+        },
+        "ui_warnings": [
+          "extreme_content_length"
+        ],
+        "edge_case_flags": [
+          "long_history_detected"
+        ],
+        "errors": []
+      }
+    },
+    {
+      "scenario_id": "scenario_4_deep_nesting",
+      "scenario_name": "Complex Deeply Nested Layout Tree",
+      "test_status": "failed",
+      "validation_details": {
+        "status": "failed",
+        "issues": [
+          "hierarchy_clarity_score: expected ~0.75, got 1.0 (delta: 0.25)",
+          "scroll_length_reduction: expected ~0.4, got 0.7 (delta: 0.30)"
+        ],
+        "warnings": [],
+        "metrics_comparison": {
+          "hierarchy_clarity_score": {
+            "expected": 0.75,
+            "actual": 1.0,
+            "delta": 0.25
+          },
+          "scroll_length_reduction": {
+            "expected": 0.4,
+            "actual": 0.7,
+            "delta": 0.3
+          },
+          "mis_operation_risk": {
+            "expected": 0.1,
+            "actual": 0.05,
+            "delta": 0.05
+          }
+        },
+        "behavior_validation": {
+          "all_met": true,
+          "met_expectations": [],
+          "unmet_expectations": []
+        }
+      },
+      "actual_output": {
+        "status": "success",
+        "ticket_id": "TKT-2024-004",
+        "processed_sections": [
+          {
+            "type": "description",
+            "order": 999,
+            "content": "Critical system outage affecting all users",
+            "importance": "critical",
+            "visual_hierarchy": "prominent",
+            "position": "top",
+            "display_order": 0,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "priority",
+            "order": 999,
+            "importance": "critical",
+            "value": "P0 - Critical",
+            "visual_hierarchy": "prominent",
+            "position": "top",
+            "display_order": 1,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "status",
+            "order": 999,
+            "importance": "high",
+            "value": "Investigating",
+            "visual_hierarchy": "prominent",
+            "position": "top",
+            "display_order": 2,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "history",
+            "order": 2,
+            "importance": "normal",
+            "collapsed": true,
+            "entries": [
+              {
+                "timestamp": "2024-01-20T10:00:00Z",
+                "actor": "Customer",
+                "action": "Reported issue"
+              }
+            ],
+            "visual_hierarchy": "secondary",
+            "position": "below_core",
+            "display_order": 3,
+            "collapsible": true,
+            "default_state": "collapsed"
+          },
+          {
+            "type": "metadata",
+            "order": 999,
+            "importance": "normal",
+            "visual_hierarchy": "secondary",
+            "position": "below_core",
+            "display_order": 4,
+            "collapsible": true,
+            "collapsed": false,
+            "default_state": "expanded"
+          }
+        ],
+        "metrics": {
+          "hierarchy_clarity_score": 1.0,
+          "scroll_length_reduction": 0.7,
+          "mis_operation_risk": 0.05
+        },
+        "ui_warnings": [
+          "complex_nesting_detected",
+          "unknown_section_type_skipped: substatus"
+        ],
+        "edge_case_flags": [
+          "deep_nesting_flattened",
+          "deep_nesting_flattened",
+          "deep_nesting_flattened",
+          "unknown_type_substatus"
+        ],
+        "errors": []
+      },
+      "expected_output": {
+        "status": "success",
+        "metrics": {
+          "hierarchy_clarity_score": 0.75,
+          "scroll_length_reduction": 0.4,
+          "mis_operation_risk": 0.1
+        },
+        "ui_warnings": [
+          "complex_nesting_detected"
+        ],
+        "edge_case_flags": [
+          "deep_nesting_flattened"
+        ],
+        "errors": []
+      }
+    },
+    {
+      "scenario_id": "scenario_5_malformed_input",
+      "scenario_name": "Malformed Input with Missing Fields and Unsafe HTML",
+      "test_status": "failed",
+      "validation_details": {
+        "status": "failed",
+        "issues": [
+          "hierarchy_clarity_score: expected ~0.5, got 0.8 (delta: 0.30)",
+          "scroll_length_reduction: expected ~0.3, got 1.0 (delta: 0.70)"
+        ],
+        "warnings": [],
+        "metrics_comparison": {
+          "hierarchy_clarity_score": {
+            "expected": 0.5,
+            "actual": 0.8,
+            "delta": 0.3
+          },
+          "scroll_length_reduction": {
+            "expected": 0.3,
+            "actual": 1.0,
+            "delta": 0.7
+          },
+          "mis_operation_risk": {
+            "expected": 0.15,
+            "actual": 0.15,
+            "delta": 0.0
+          }
+        },
+        "behavior_validation": {
+          "all_met": true,
+          "met_expectations": [
+            "html_sanitized",
+            "path_traversal_prevented"
+          ],
+          "unmet_expectations": []
+        }
+      },
+      "actual_output": {
+        "status": "partial_success",
+        "ticket_id": "TKT-2024-005",
+        "processed_sections": [
+          {
+            "type": "description",
+            "order": 999,
+            "content": "&lt;img src=x content",
+            "importance": "critical",
+            "visual_hierarchy": "prominent",
+            "position": "top",
+            "display_order": 0,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "status",
+            "order": 999,
+            "importance": "high",
+            "value": "12345",
+            "visual_hierarchy": "prominent",
+            "position": "top",
+            "display_order": 1,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "priority",
+            "order": 2,
+            "importance": "normal",
+            "value": "Unknown",
+            "visual_hierarchy": "prominent",
+            "position": "top",
+            "display_order": 2,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "history",
+            "order": 999,
+            "importance": "normal",
+            "collapsed": true,
+            "entries": [],
+            "visual_hierarchy": "secondary",
+            "position": "below_core",
+            "display_order": 3,
+            "collapsible": true,
+            "default_state": "collapsed"
+          },
+          {
+            "type": "attachments",
+            "order": 999,
+            "importance": "normal",
+            "files": [
+              {
+                "name": "___etc_passwd",
+                "size": "unknown",
+                "preview_mode": "inline"
+              }
+            ],
+            "visual_hierarchy": "secondary",
+            "position": "below_core",
+            "display_order": 4,
+            "collapsible": false,
+            "collapsed": false
+          }
+        ],
+        "metrics": {
+          "hierarchy_clarity_score": 0.8,
+          "scroll_length_reduction": 1.0,
+          "mis_operation_risk": 0.15
+        },
+        "ui_warnings": [
+          "type_mismatch_corrected",
+          "html_sanitization_applied",
+          "type_mismatch_corrected",
+          "unknown_section_type_skipped: unknown_section_type",
+          "type_mismatch_corrected",
+          "type_mismatch_corrected",
+          "malformed_structure_detected",
+          "malformed_structure_detected"
+        ],
+        "edge_case_flags": [
+          "xss_attempt_blocked",
+          "unknown_type_unknown_section_type",
+          "path_traversal_prevented",
+          "invalid_types_handled"
+        ],
+        "errors": [
+          "Invalid order value for description section",
+          "Priority value is null",
+          "Status value should be string",
+          "History entries is not an array"
+        ]
+      },
+      "expected_output": {
+        "status": "partial_success",
+        "metrics": {
+          "hierarchy_clarity_score": 0.5,
+          "scroll_length_reduction": 0.3,
+          "mis_operation_risk": 0.15
+        },
+        "ui_warnings": [
+          "html_sanitization_applied",
+          "unknown_section_type_skipped",
+          "type_mismatch_corrected",
+          "malformed_structure_detected"
+        ],
+        "edge_case_flags": [
+          "xss_attempt_blocked",
+          "path_traversal_prevented",
+          "invalid_types_handled"
+        ],
+        "errors": [
+          "Invalid order value for description section",
+          "Priority value is null",
+          "History entries is not an array",
+          "Status value should be string"
+        ]
+      }
+    },
+    {
+      "scenario_id": "scenario_6_attachment_blocking",
+      "scenario_name": "Attachment Preview Blocking Context",
+      "test_status": "failed",
+      "validation_details": {
+        "status": "failed",
+        "issues": [
+          "scroll_length_reduction: expected ~0.35, got 1.0 (delta: 0.65)"
+        ],
+        "warnings": [],
+        "metrics_comparison": {
+          "hierarchy_clarity_score": {
+            "expected": 0.8,
+            "actual": 1.0,
+            "delta": 0.2
+          },
+          "scroll_length_reduction": {
+            "expected": 0.35,
+            "actual": 1.0,
+            "delta": 0.65
+          },
+          "mis_operation_risk": {
+            "expected": 0.08,
+            "actual": 0.05,
+            "delta": 0.03
+          }
+        },
+        "behavior_validation": {
+          "all_met": true,
+          "met_expectations": [
+            "attachment_preview_non_blocking"
+          ],
+          "unmet_expectations": []
+        }
+      },
+      "actual_output": {
+        "status": "success",
+        "ticket_id": "TKT-2024-006",
+        "processed_sections": [
+          {
+            "type": "description",
+            "order": 1,
+            "content": "Screenshot shows the exact error - please review attachment",
+            "importance": "high",
+            "visual_hierarchy": "prominent",
+            "position": "top",
+            "display_order": 0,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "status",
+            "order": 3,
+            "importance": "high",
+            "value": "Waiting for Info",
+            "visual_hierarchy": "prominent",
+            "position": "top",
+            "display_order": 1,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "priority",
+            "order": 2,
+            "importance": "medium",
+            "value": "P2 - Medium",
+            "visual_hierarchy": "prominent",
+            "position": "top",
+            "display_order": 2,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "attachments",
+            "order": 4,
+            "importance": "normal",
+            "files": [
+              {
+                "name": "error_screenshot.png",
+                "size": "1.2MB",
+                "preview_mode": "side_panel",
+                "preview_fallback": "inline_thumbnail",
+                "blocks_context": false
+              },
+              {
+                "name": "system_diagnostics.pdf",
+                "size": "4.5MB",
+                "preview_mode": "side_panel",
+                "preview_fallback": "inline_thumbnail",
+                "blocks_context": false
+              }
+            ],
+            "visual_hierarchy": "secondary",
+            "position": "below_core",
+            "display_order": 3,
+            "collapsible": false,
+            "collapsed": false
+          },
+          {
+            "type": "history",
+            "order": 5,
+            "importance": "normal",
+            "collapsed": true,
+            "entries": [
+              {
+                "timestamp": "2024-01-20T10:00:00Z",
+                "actor": "Customer",
+                "action": "Uploaded screenshot"
+              }
+            ],
+            "visual_hierarchy": "secondary",
+            "position": "below_core",
+            "display_order": 4,
+            "collapsible": true,
+            "default_state": "collapsed"
+          }
+        ],
+        "metrics": {
+          "hierarchy_clarity_score": 1.0,
+          "scroll_length_reduction": 1.0,
+          "mis_operation_risk": 0.05
+        },
+        "ui_warnings": [
+          "attachment_preview_optimized",
+          "attachment_preview_optimized"
+        ],
+        "edge_case_flags": [
+          "fullscreen_overlay_replaced",
+          "fullscreen_overlay_replaced"
+        ],
+        "errors": []
+      },
+      "expected_output": {
+        "status": "success",
+        "metrics": {
+          "hierarchy_clarity_score": 0.8,
+          "scroll_length_reduction": 0.35,
+          "mis_operation_risk": 0.08
+        },
+        "ui_warnings": [
+          "attachment_preview_optimized"
+        ],
+        "edge_case_flags": [
+          "fullscreen_overlay_replaced"
+        ],
+        "errors": []
+      }
+    }
+  ],
+  "timestamp": "2025-11-20T11:34:43.871000"
+}
