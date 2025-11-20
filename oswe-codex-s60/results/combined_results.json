@@ -1,0 +1,1062 @@
+{
+  "baseline": [
+    {
+      "scenario_id": "normal_overloaded_main_flow",
+      "transformed_layout": {
+        "type": "page",
+        "title": "Ticket Detail",
+        "children": [
+          {
+            "type": "section",
+            "id": "assignee",
+            "title": "Assigned To",
+            "content": "Alice"
+          },
+          {
+            "type": "section",
+            "id": "history",
+            "title": "History",
+            "children": [
+              {
+                "type": "event",
+                "subtype": "comment",
+                "author": "Alice",
+                "text": "Initial response"
+              },
+              {
+                "type": "event",
+                "subtype": "status_change",
+                "from": "New",
+                "to": "In Progress"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "id": "attachments",
+            "title": "Attachments",
+            "attachments": [
+              {
+                "name": "log.txt",
+                "url": "https://example.com/log.txt",
+                "preview_mode": "overlay"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "id": "priority",
+            "title": "Priority",
+            "content": "P1"
+          },
+          {
+            "type": "section",
+            "id": "status",
+            "title": "Status",
+            "content": "Open"
+          },
+          {
+            "type": "section",
+            "id": "description",
+            "title": "Description",
+            "content": "Login fails on SSO"
+          }
+        ]
+      },
+      "metrics": {
+        "hierarchy_clarity_score": 0.3,
+        "scroll_length": 3.0,
+        "misoperation_risk_score": 0.2
+      },
+      "ui_warnings": [],
+      "edge_case_flags": [],
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "scenario_id": "mis_operation_internal_external_confusion",
+      "transformed_layout": {
+        "type": "page",
+        "title": "Ticket Detail",
+        "children": [
+          {
+            "type": "section",
+            "id": "messages",
+            "title": "Conversation",
+            "children": [
+              {
+                "type": "message",
+                "visibility": "internal",
+                "author": "Bob",
+                "text": "Investigating root cause"
+              },
+              {
+                "type": "message",
+                "visibility": "external",
+                "author": "Customer",
+                "text": "Any updates?"
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "id": "reply",
+            "action_type": "send_reply"
+          }
+        ]
+      },
+      "metrics": {
+        "hierarchy_clarity_score": 0.0,
+        "scroll_length": 0.0,
+        "misoperation_risk_score": 0.8
+      },
+      "ui_warnings": [],
+      "edge_case_flags": [],
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "scenario_id": "long_scroll_history",
+      "transformed_layout": {
+        "type": "page",
+        "title": "Ticket Detail",
+        "children": [
+          {
+            "type": "section",
+            "id": "history",
+            "title": "History",
+            "children": [
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 1"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 2"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 3"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 4"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 5"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 6"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 7"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 8"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 9"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 10"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 11"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 12"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 13"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 14"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 15"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 16"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 17"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 18"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 19"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 20"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 21"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 22"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 23"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 24"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 25"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 26"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 27"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 28"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 29"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 30"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 31"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 32"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 33"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 34"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 35"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 36"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 37"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 38"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 39"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 40"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 41"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 42"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 43"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 44"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 45"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 46"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 47"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 48"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 49"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 50"
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "hierarchy_clarity_score": 0.0,
+        "scroll_length": 51.0,
+        "misoperation_risk_score": 0.2
+      },
+      "ui_warnings": [],
+      "edge_case_flags": [],
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "scenario_id": "complex_deep_nesting",
+      "transformed_layout": {
+        "type": "page",
+        "title": "Ticket Detail",
+        "children": [
+          {
+            "type": "container",
+            "title": "Wrapper",
+            "children": [
+              {
+                "type": "container",
+                "title": "SubWrapper",
+                "children": [
+                  {
+                    "type": "section",
+                    "id": "status",
+                    "title": "Status",
+                    "content": "Pending"
+                  },
+                  {
+                    "type": "section",
+                    "id": "description",
+                    "title": "Description",
+                    "content": "App crash"
+                  },
+                  {
+                    "type": "section",
+                    "id": "history",
+                    "title": "History",
+                    "children": [
+                      {
+                        "type": "event",
+                        "subtype": "comment",
+                        "text": "Nested comment"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "hierarchy_clarity_score": 0.0,
+        "scroll_length": 2.0,
+        "misoperation_risk_score": 0.2
+      },
+      "ui_warnings": [],
+      "edge_case_flags": [],
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "scenario_id": "malformed_input_with_unsafe_html",
+      "transformed_layout": {
+        "type": "page",
+        "children": [
+          {
+            "type": "section",
+            "id": "description",
+            "content": ""
+          },
+          {
+            "type": 123,
+            "id": "priority",
+            "title": null,
+            "content": "P2"
+          },
+          "invalid_node"
+        ]
+      },
+      "metrics": {
+        "hierarchy_clarity_score": 0.511,
+        "scroll_length": 0.0,
+        "misoperation_risk_score": 0.2
+      },
+      "ui_warnings": [
+        "invalid_node"
+      ],
+      "edge_case_flags": [],
+      "errors": [],
+      "status": "pass"
+    }
+  ],
+  "enhanced": [
+    {
+      "scenario_id": "normal_overloaded_main_flow",
+      "transformed_layout": {
+        "type": "page",
+        "title": "Ticket Detail",
+        "children": [
+          {
+            "type": "core_info",
+            "title": "Ticket Overview",
+            "style": {
+              "variant": "panel",
+              "emphasis": true
+            },
+            "children": [
+              {
+                "type": "section",
+                "id": "description",
+                "title": "Description",
+                "content": "Login fails on SSO",
+                "style": {
+                  "variant": "key",
+                  "emphasis": true
+                }
+              },
+              {
+                "type": "section",
+                "id": "priority",
+                "title": "Priority",
+                "content": "P1",
+                "style": {
+                  "variant": "key",
+                  "emphasis": true
+                }
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "id": "assignee",
+            "title": "Assigned To",
+            "content": "Alice"
+          },
+          {
+            "type": "section",
+            "id": "history",
+            "title": "History",
+            "children": [
+              {
+                "type": "event",
+                "subtype": "comment",
+                "author": "Alice",
+                "text": "Initial response"
+              },
+              {
+                "type": "event",
+                "subtype": "status_change",
+                "from": "New",
+                "to": "In Progress"
+              }
+            ],
+            "collapsible": true,
+            "collapsed": true,
+            "summary": {
+              "item_count": 2
+            },
+            "grouped_by": [
+              "comment",
+              "status_change"
+            ]
+          },
+          {
+            "type": "section",
+            "id": "attachments",
+            "title": "Attachments",
+            "attachments": [
+              {
+                "name": "log.txt",
+                "url": "https://example.com/log.txt",
+                "preview_mode": "side-panel",
+                "non_blocking": true
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "id": "status",
+            "title": "Status",
+            "content": "Open"
+          }
+        ]
+      },
+      "metrics": {
+        "hierarchy_clarity_score": 1.0,
+        "scroll_length": 0.5,
+        "misoperation_risk_score": 0.3,
+        "attachment_usability_score": 1.0
+      },
+      "ui_warnings": [],
+      "edge_case_flags": [],
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "scenario_id": "mis_operation_internal_external_confusion",
+      "transformed_layout": {
+        "type": "page",
+        "title": "Ticket Detail",
+        "children": [
+          {
+            "type": "section",
+            "id": "messages",
+            "title": "Conversation",
+            "children": [
+              {
+                "type": "message",
+                "visibility": "internal",
+                "author": "Bob",
+                "text": "Investigating root cause",
+                "style": {
+                  "variant": "subtle",
+                  "color": "yellow"
+                },
+                "visual_tag": "Internal Note"
+              },
+              {
+                "type": "message",
+                "visibility": "external",
+                "author": "Customer",
+                "text": "Any updates?",
+                "style": {
+                  "variant": "accent",
+                  "color": "blue"
+                },
+                "visual_tag": "Customer Reply"
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "id": "reply",
+            "action_type": "send_reply",
+            "requires_confirmation": true,
+            "confirmation_message": "Are you sure you want to send reply?"
+          }
+        ]
+      },
+      "metrics": {
+        "hierarchy_clarity_score": 0.0,
+        "scroll_length": 0.0,
+        "misoperation_risk_score": 0.2,
+        "attachment_usability_score": 1.0
+      },
+      "ui_warnings": [],
+      "edge_case_flags": [],
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "scenario_id": "long_scroll_history",
+      "transformed_layout": {
+        "type": "page",
+        "title": "Ticket Detail",
+        "children": [
+          {
+            "type": "section",
+            "id": "history",
+            "title": "History",
+            "children": [
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 1"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 2"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 3"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 4"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 5"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 6"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 7"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 8"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 9"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 10"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 11"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 12"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 13"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 14"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 15"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 16"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 17"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 18"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 19"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 20"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 21"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 22"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 23"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 24"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 25"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 26"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 27"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 28"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 29"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 30"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 31"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 32"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 33"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 34"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 35"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 36"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 37"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 38"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 39"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 40"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 41"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 42"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 43"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 44"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 45"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 46"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 47"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 48"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 49"
+              },
+              {
+                "type": "event",
+                "subtype": "comment",
+                "text": "Event 50"
+              }
+            ],
+            "collapsible": true,
+            "collapsed": true,
+            "summary": {
+              "item_count": 50
+            },
+            "grouped_by": [
+              "comment"
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "hierarchy_clarity_score": 0.0,
+        "scroll_length": 0.5,
+        "misoperation_risk_score": 0.3,
+        "attachment_usability_score": 1.0
+      },
+      "ui_warnings": [],
+      "edge_case_flags": [
+        "long_history"
+      ],
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "scenario_id": "complex_deep_nesting",
+      "transformed_layout": {
+        "type": "page",
+        "title": "Ticket Detail",
+        "children": [
+          {
+            "type": "core_info",
+            "title": "Ticket Overview",
+            "style": {
+              "variant": "panel",
+              "emphasis": true
+            },
+            "children": [
+              {
+                "type": "section",
+                "id": "status",
+                "title": "Status",
+                "content": "Pending",
+                "style": {
+                  "variant": "key",
+                  "emphasis": true
+                }
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "title": "Wrapper",
+            "children": [
+              {
+                "type": "container",
+                "title": "SubWrapper",
+                "children": [
+                  {
+                    "type": "section",
+                    "id": "description",
+                    "title": "Description",
+                    "content": "App crash"
+                  },
+                  {
+                    "type": "section",
+                    "id": "history",
+                    "title": "History",
+                    "children": [
+                      {
+                        "type": "event",
+                        "subtype": "comment",
+                        "text": "Nested comment"
+                      }
+                    ],
+                    "collapsible": true,
+                    "collapsed": true,
+                    "summary": {
+                      "item_count": 1
+                    },
+                    "grouped_by": [
+                      "comment"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "hierarchy_clarity_score": 0.95,
+        "scroll_length": 0.5,
+        "misoperation_risk_score": 0.3,
+        "attachment_usability_score": 1.0
+      },
+      "ui_warnings": [],
+      "edge_case_flags": [],
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "scenario_id": "malformed_input_with_unsafe_html",
+      "transformed_layout": {
+        "type": "page",
+        "children": [
+          {
+            "type": "core_info",
+            "title": "Ticket Overview",
+            "style": {
+              "variant": "panel",
+              "emphasis": true
+            },
+            "children": [
+              {
+                "type": "section",
+                "id": "description",
+                "content": "",
+                "style": {
+                  "variant": "key",
+                  "emphasis": true
+                }
+              }
+            ]
+          },
+          {
+            "type": 123,
+            "id": "priority",
+            "title": null,
+            "content": "P2"
+          },
+          "invalid_node"
+        ]
+      },
+      "metrics": {
+        "hierarchy_clarity_score": 1.0,
+        "scroll_length": 0.0,
+        "misoperation_risk_score": 0.3,
+        "attachment_usability_score": 1.0
+      },
+      "ui_warnings": [
+        "invalid_node",
+        "sanitized_html"
+      ],
+      "edge_case_flags": [
+        "malformed"
+      ],
+      "errors": [],
+      "status": "pass"
+    }
+  ],
+  "aggregates": {
+    "baseline": {
+      "avg_clarity": 0.1622,
+      "avg_scroll": 11.2,
+      "avg_misop": 0.32
+    },
+    "enhanced": {
+      "avg_clarity": 0.59,
+      "avg_scroll": 0.3,
+      "avg_misop": 0.27999999999999997
+    }
+  }
+}

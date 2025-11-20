@@ -1,0 +1,142 @@
+[
+  {
+    "id": "normal_overloaded_main_flow",
+    "description": "Overloaded layout with core info buried; attachments overlay; history visible and long.",
+    "initial_layout": {
+      "type": "page",
+      "title": "Ticket Detail",
+      "children": [
+        {"type": "section", "id": "assignee", "title": "Assigned To", "content": "Alice"},
+        {"type": "section", "id": "history", "title": "History", "children": [
+          {"type": "event", "subtype": "comment", "author": "Alice", "text": "Initial response"},
+          {"type": "event", "subtype": "status_change", "from": "New", "to": "In Progress"}
+        ]},
+        {"type": "section", "id": "attachments", "title": "Attachments", "attachments": [
+          {"name": "log.txt", "url": "https://example.com/log.txt", "preview_mode": "overlay"}
+        ]},
+        {"type": "section", "id": "priority", "title": "Priority", "content": "P1"},
+        {"type": "section", "id": "status", "title": "Status", "content": "Open"},
+        {"type": "section", "id": "description", "title": "Description", "content": "Login fails on SSO"}
+      ]
+    },
+    "expected_behavior": {
+      "core_info_top": true,
+      "history_collapsed": true,
+      "attachment_non_blocking": true
+    },
+    "expected_output": {
+      "status": "pass",
+      "edge_case_flags": [],
+      "ui_warnings": [],
+      "metrics": {
+        "hierarchy_clarity_score": ">=0.7",
+        "scroll_length": "<3",
+        "misoperation_risk_score": "<=0.4"
+      }
+    }
+  },
+  {
+    "id": "mis_operation_internal_external_confusion",
+    "description": "Internal notes and customer replies look the same in the input.",
+    "initial_layout": {
+      "type": "page",
+      "title": "Ticket Detail",
+      "children": [
+        {"type": "section", "id": "messages", "title": "Conversation", "children": [
+          {"type": "message", "visibility": "internal", "author": "Bob", "text": "Investigating root cause"},
+          {"type": "message", "visibility": "external", "author": "Customer", "text": "Any updates?"}
+        ]},
+        {"type": "action", "id": "reply", "action_type": "send_reply"}
+      ]
+    },
+    "expected_behavior": {
+      "internal_external_diff": true,
+      "confirmation_prompts": true
+    },
+    "expected_output": {
+      "status": "pass",
+      "edge_case_flags": [],
+      "ui_warnings": [],
+      "metrics": {
+        "misoperation_risk_score": "<=0.3"
+      }
+    }
+  },
+  {
+    "id": "long_scroll_history",
+    "description": "Extremely long history should be collapsible and summarized.",
+    "initial_layout": {
+      "type": "page",
+      "title": "Ticket Detail",
+      "children": [
+        {"type": "section", "id": "history", "title": "History", "children": [
+          {"type": "event", "subtype": "comment", "text": "Event #"}
+        ], "repeat": 50}
+      ]
+    },
+    "expected_behavior": {
+      "history_collapsed": true,
+      "scroll_reduced": true
+    },
+    "expected_output": {
+      "status": "pass",
+      "edge_case_flags": ["long_history"],
+      "metrics": {
+        "scroll_length": "<5"
+      }
+    }
+  },
+  {
+    "id": "complex_deep_nesting",
+    "description": "Deeply nested layout tree with ambiguous sections.",
+    "initial_layout": {
+      "type": "page",
+      "title": "Ticket Detail",
+      "children": [
+        {"type": "container", "title": "Wrapper", "children": [
+          {"type": "container", "title": "SubWrapper", "children": [
+            {"type": "section", "id": "status", "title": "Status", "content": "Pending"},
+            {"type": "section", "id": "description", "title": "Description", "content": "App crash"},
+            {"type": "section", "id": "history", "title": "History", "children": [
+              {"type": "event", "subtype": "comment", "text": "Nested comment"}
+            ]}
+          ]}
+        ]}
+      ]
+    },
+    "expected_behavior": {
+      "core_info_top": true,
+      "history_collapsed": true,
+      "deep_nesting_flagged": true
+    },
+    "expected_output": {
+      "status": "pass",
+      "edge_case_flags": ["deep_nesting"],
+      "metrics": {
+        "hierarchy_clarity_score": ">=0.6"
+      }
+    }
+  },
+  {
+    "id": "malformed_input_with_unsafe_html",
+    "description": "Malformed structure with missing fields, invalid types, and unsafe HTML payloads.",
+    "initial_layout": {
+      "type": "page",
+      "children": [
+        {"type": "section", "id": "description", "content": "<script>alert('xss')</script>"},
+        {"type": 123, "id": "priority", "title": null, "content": "P2"},
+        "invalid_node"
+      ]
+    },
+    "expected_behavior": {
+      "safe_fallback": true,
+      "sanitize_html": true
+    },
+    "expected_output": {
+      "status": "pass",
+      "edge_case_flags": ["malformed"],
+      "ui_warnings": ["sanitized_html", "invalid_node"],
+      "errors": []
+    }
+  }
+]
