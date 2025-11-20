@@ -1,0 +1,4 @@
+# Project B - Enhanced Ticket UI
+# Minimal dependencies for enhanced processing
+
+# No external dependencies required - uses only Python standard library
