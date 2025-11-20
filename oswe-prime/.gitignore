@@ -1,0 +1,95 @@
+# Root .gitignore for the workspace (SaaS Ticket UI improvement project)
+# Keeps local development files, secrets, caches, and generated outputs out of the repo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+Icon\r
+
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.pys
+
+# Virtual environments
+.env/
+.venv/
+venv/
+ENV/
+env/
+**/.env/
+**/.venv/
+
+# Pip & packaging
+pip-wheel-metadata/
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# PyTest
+.pytest_cache/
+
+# Coverage
+coverage.xml
+.coverage
+htmlcov/
+
+# Logs and results (test output)
+logs/
+**/logs/
+results/
+**/results/
+log_*.txt
+log_*.log
+
+# Editor/IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Docker & container runtime artifacts
+# (Keep Dockerfile/CICD scripts under version control; ignore generated images and overrides)
+docker-compose.override.yml
+**/docker-compose.override.yml
+
+# Secret or private files
+*.pem
+*.key
+*.crt
+*.p12
+*.jks
+*.env
+*.secret
+secrets.json
+credentials.json
+
+# Build / distribution / system files
+*.log
+*.tmp
+*.cache
+*.bak
+*~
+
+# Node / frontend artifacts (if present)
+node_modules/
+
+# Misc
+*.sqlite3
+*.db
+
+# Keep Dockerfile and README and scripts under version control; don't ignore them
+# If you want to ignore additional generated build artifacts, add them below.
+
+# End of root .gitignore
