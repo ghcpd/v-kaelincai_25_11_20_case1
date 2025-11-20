@@ -1,0 +1,92 @@
+[
+  {
+    "id": "normal_flow",
+    "description": "Overloaded input → improved structured output; core information placed at top, timeline collapsed, non-blocking preview.",
+    "input_layout": {
+      "title": "Ticket 1234",
+      "fields": [
+        {"type": "secondary", "label": "historical_log", "content": "Large history..."},
+        {"type": "secondary", "label": "attachments", "content": [{"filename": "image.png", "type":"image"}]},
+        {"type": "primary", "label": "problem_description", "content": "App crashes when opening"},
+        {"type": "primary", "label": "priority", "content": "High"},
+        {"type": "primary", "label": "status", "content": "Open"}
+      ]
+    },
+    "expected": {
+      "core_on_top": true,
+      "timeline_collapsed": true,
+      "preview_blocking": false
+    }
+  },
+  {
+    "id": "mis_operation_flow",
+    "description": "Internal notes vs customer-visible reply confusion; enhanced version must prevent mis-operation and differentiate inputs.",
+    "input_layout": {
+      "title": "Ticket 2222",
+      "fields": [
+        {"type": "action", "label": "reply_box", "content": "Send reply...", "meta": {"scope": "ambiguous"}},
+        {"type": "notes", "label": "internal_note", "content": "Internal: Do not escalate"}
+      ]
+    },
+    "expected": {
+      "internal_clear": true,
+      "confirmation_on_send": true
+    }
+  },
+  {
+    "id": "long_scroll_flow",
+    "description": "Extremely long history; enhanced version collapses and shortens scroll length.",
+    "input_layout": {
+      "title": "Ticket 3333",
+      "fields": [
+        {"type": "secondary", "label": "history", "content": ""},
+        {"type": "primary", "label": "problem_description", "content": "Long history test"}
+      ],
+      "history_entries": [
+        {"created": "2025-01-01T00:00:00Z", "message": "entry1"},
+        {"created": "2025-01-02T00:00:00Z", "message": "entry2"},
+        {"created": "2025-01-03T00:00:00Z", "message": "entry3"},
+        {"created": "2025-01-04T00:00:00Z", "message": "entry4"},
+        {"created": "2025-01-05T00:00:00Z", "message": "entry5"}
+      ]
+    },
+    "expected": {
+      "history_collapsed": true,
+      "scroll_reduction_pct": 50
+    }
+  },
+  {
+    "id": "complex_nesting",
+    "description": "Deeply nested layout trees; must be correctly identified, reorganized, and collapsed.",
+    "input_layout": {
+      "title": "Ticket 4444",
+      "fields": [
+        {"type": "container", "label": "col1", "children": [
+          {"type": "container", "label": "inner", "children": [
+            {"type": "secondary", "label": "log", "content": "nested log content"},
+            {"type": "primary", "label": "status", "content": "Investigating"}
+          ]}
+        ]}
+      ]
+    },
+    "expected": {
+      "nesting_flattened": true,
+      "core_present": true
+    }
+  },
+  {
+    "id": "malformed_input",
+    "description": "Missing fields, invalid types, abnormal nesting, unsafe HTML payloads; enhanced version must safely degrade.",
+    "input_layout": {
+      "title": "Ticket 5555",
+      "fields": [
+        {"type": "unknown", "label": "x", "content": "<script>alert(1)</script>"},
+        {"type": null, "label": "y"}
+      ]
+    },
+    "expected": {
+      "safe_fallback": true,
+      "errors": ["unsafe_html_detected", "invalid_field_type"]
+    }
+  }
+]

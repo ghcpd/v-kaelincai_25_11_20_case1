@@ -1,0 +1,17 @@
+# Project A - Baseline
+# Ignore local venvs, results and caches for the Baseline project
+
+.env/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+results/
+logs/
+*.log
+.env
+
+# Keep source, tests, Dockerfile, README
+
+# End of Project A .gitignore
