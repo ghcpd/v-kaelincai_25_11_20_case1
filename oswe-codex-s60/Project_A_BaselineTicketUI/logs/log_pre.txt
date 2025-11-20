@@ -1,0 +1,6 @@
+2025-11-20T06:17:38.948391
+[normal_overloaded_main_flow] status=pass metrics={'hierarchy_clarity_score': 0.3, 'scroll_length': 3.0, 'misoperation_risk_score': 0.2}
+[mis_operation_internal_external_confusion] status=pass metrics={'hierarchy_clarity_score': 0.0, 'scroll_length': 0.0, 'misoperation_risk_score': 0.8}
+[long_scroll_history] status=pass metrics={'hierarchy_clarity_score': 0.0, 'scroll_length': 51.0, 'misoperation_risk_score': 0.2}
+[complex_deep_nesting] status=pass metrics={'hierarchy_clarity_score': 0.0, 'scroll_length': 2.0, 'misoperation_risk_score': 0.2}
+[malformed_input_with_unsafe_html] status=pass metrics={'hierarchy_clarity_score': 0.511, 'scroll_length': 0.0, 'misoperation_risk_score': 0.2}
