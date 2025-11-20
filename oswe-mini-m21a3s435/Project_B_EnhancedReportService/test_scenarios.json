@@ -1,0 +1,37 @@
+[
+  {
+    "id": "daily_core_then_dims",
+    "description": "Client requests daily KPIs then asks for dim details (layered loading)",
+    "initial_state": {"cache": "cold", "freshness_lag_hours": 0, "peak": false},
+    "request": {"granularity": "day", "dimensions": {}, "export": false},
+    "expected": {"status": "ok", "cache_hit": false}
+  },
+  {
+    "id": "preagg_hit",
+    "description": "Request matches pre-agg key (day+region+channel) should return preagg flag",
+    "initial_state": {"cache": "warm"},
+    "request": {"granularity": "day", "dimensions": {"day": "2025-11-10", "region": "NA", "channel": "web"}},
+    "expected": {"status": "ok", "preagg": true}
+  },
+  {
+    "id": "early_morning_incremental",
+    "description": "Incremental in-progress early morning provides freshness metadata",
+    "initial_state": {"freshness_lag_hours": 2, "incremental_in_progress": true},
+    "request": {"granularity": "day", "dimensions": {}},
+    "expected": {"status": "ok", "freshness": {"incremental_in_progress": true}}
+  },
+  {
+    "id": "peak_cost_circuit",
+    "description": "High-cost queries during peak should trigger circuit breaker fallback",
+    "initial_state": {"peak": true},
+    "request": {"granularity": "day", "dimensions": {"region": "NA", "campaign": "A"}},
+    "expected": {"status": "fallback"}
+  },
+  {
+    "id": "export_async",
+    "description": "Large export should be accepted and queued for async processing",
+    "initial_state": {},
+    "request": {"granularity": "month", "dimensions": {}, "export": true, "export_path": "results/async_export.json"},
+    "expected": {"status": "accepted"}
+  }
+]

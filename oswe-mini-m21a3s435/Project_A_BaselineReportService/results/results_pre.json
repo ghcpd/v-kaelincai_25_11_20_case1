@@ -1,0 +1,48 @@
+{
+  "scenarios": 5,
+  "passed": 5,
+  "results": [
+    {
+      "id": "daily_core_flow",
+      "latency": 1.2008798122406006,
+      "status": "ok",
+      "cache_hit": false,
+      "passed": true,
+      "edge_case_flags": []
+    },
+    {
+      "id": "preagg_vs_raw",
+      "latency": 1.2007489204406738,
+      "status": "ok",
+      "cache_hit": false,
+      "passed": true,
+      "edge_case_flags": []
+    },
+    {
+      "id": "early_morning_incomplete",
+      "latency": 1.2009880542755127,
+      "status": "ok",
+      "cache_hit": false,
+      "passed": true,
+      "edge_case_flags": [
+        "stale_data"
+      ]
+    },
+    {
+      "id": "complex_slicing",
+      "latency": 1.2006266117095947,
+      "status": "error",
+      "cache_hit": false,
+      "passed": true,
+      "edge_case_flags": []
+    },
+    {
+      "id": "malformed_input",
+      "latency": 1.200728416442871,
+      "status": "ok",
+      "cache_hit": false,
+      "passed": true,
+      "edge_case_flags": []
+    }
+  ]
+}

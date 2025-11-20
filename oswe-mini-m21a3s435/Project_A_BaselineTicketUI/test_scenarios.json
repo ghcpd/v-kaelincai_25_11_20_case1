@@ -1,0 +1,32 @@
+[
+  {
+    "id": "overloaded_layout",
+    "description": "Large, overloaded layout should remain mostly unchanged in baseline",
+    "input": {"fields": ["priority","status","description"], "history": [1,2,3]},
+    "expected": {"status": "ok", "notes": ["baseline_pass"]}
+  },
+  {
+    "id": "attachment_blocking",
+    "description": "Baseline attachment preview blocks context (no optimization)",
+    "input": {"attachments": [{"id": 1}]},
+    "expected": {"status": "ok"}
+  },
+  {
+    "id": "internal_vs_external_confusion",
+    "description": "No differentiation of internal notes vs customer replies in baseline",
+    "input": {"notes": [{"type": "internal", "text": "secret"}, {"type":"public", "text":"reply"}]},
+    "expected": {"status": "ok"}
+  },
+  {
+    "id": "deep_nested_layout",
+    "description": "Deeply nested layout remains unchanged",
+    "input": {"tree": {"a": {"b": {"c": {"d": "value"}}}}},
+    "expected": {"status": "ok"}
+  },
+  {
+    "id": "malformed_html",
+    "description": "Unsafe HTML in input should be passed through unsafely in baseline",
+    "input": {"description_html": "<script>alert(1)</script><p>ok</p>"},
+    "expected": {"status": "ok"}
+  }
+]

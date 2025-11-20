@@ -1,0 +1,5 @@
+daily_core_flow: latency=1.201s status=ok passed=True
+preagg_vs_raw: latency=1.201s status=ok passed=True
+early_morning_incomplete: latency=1.201s status=ok passed=True
+complex_slicing: latency=1.201s status=error passed=True
+malformed_input: latency=1.201s status=ok passed=True

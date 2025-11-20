@@ -1,0 +1,5 @@
+daily_core_then_dims: {'status': 'ok', 'metrics': {'impressions': 822555, 'clicks': 42849, 'revenue': 87277.5}, 'cache_hit': False, 'freshness': {'last_full_sync_hours_ago': 24.000093088547388, 'incremental_in_progress': False}} passed=True
+preagg_hit: {'status': 'ok', 'metrics': {'impressions': 822555, 'clicks': 42849, 'revenue': 87277.5}, 'cache_hit': False, 'dimensions': {'status': 'ok', 'metrics': {'impressions': 27270, 'clicks': 1431, 'revenue': 2835.0}, 'cache_hit': True}, 'freshness': {'last_full_sync_hours_ago': 24.000185421970155, 'incremental_in_progress': False}} passed=False
+early_morning_incremental: {'status': 'ok', 'metrics': {'impressions': 822555, 'clicks': 42849, 'revenue': 87277.5}, 'cache_hit': False, 'freshness': {'last_full_sync_hours_ago': 24.000207887358137, 'incremental_in_progress': False}} passed=False
+peak_cost_circuit: {'status': 'fallback', 'error': 'cost_threshold_exceeded', 'circuit': True} passed=True
+export_async: {'status': 'accepted', 'job_id': 'job_1763623869041'} passed=True

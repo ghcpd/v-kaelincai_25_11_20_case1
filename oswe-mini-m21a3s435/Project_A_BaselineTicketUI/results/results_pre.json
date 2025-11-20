@@ -1,0 +1,101 @@
+{
+  "scenarios": 5,
+  "passed": 5,
+  "results": [
+    {
+      "id": "overloaded_layout",
+      "passed": true,
+      "output": {
+        "status": "ok",
+        "transformed": {
+          "fields": [
+            "priority",
+            "status",
+            "description"
+          ],
+          "history": [
+            1,
+            2,
+            3
+          ]
+        },
+        "notes": [
+          "baseline_pass"
+        ]
+      }
+    },
+    {
+      "id": "attachment_blocking",
+      "passed": true,
+      "output": {
+        "status": "ok",
+        "transformed": {
+          "attachments": [
+            {
+              "id": 1
+            }
+          ]
+        },
+        "notes": [
+          "baseline_pass"
+        ]
+      }
+    },
+    {
+      "id": "internal_vs_external_confusion",
+      "passed": true,
+      "output": {
+        "status": "ok",
+        "transformed": {
+          "notes": [
+            {
+              "type": "internal",
+              "text": "secret"
+            },
+            {
+              "type": "public",
+              "text": "reply"
+            }
+          ]
+        },
+        "notes": [
+          "baseline_pass"
+        ]
+      }
+    },
+    {
+      "id": "deep_nested_layout",
+      "passed": true,
+      "output": {
+        "status": "ok",
+        "transformed": {
+          "tree": {
+            "a": {
+              "b": {
+                "c": {
+                  "d": "value"
+                }
+              }
+            }
+          }
+        },
+        "notes": [
+          "baseline_pass"
+        ]
+      }
+    },
+    {
+      "id": "malformed_html",
+      "passed": true,
+      "output": {
+        "status": "ok",
+        "transformed": {
+          "description_html": "<script>alert(1)</script><p>ok</p>"
+        },
+        "notes": [
+          "baseline_pass"
+        ]
+      }
+    }
+  ]
+}

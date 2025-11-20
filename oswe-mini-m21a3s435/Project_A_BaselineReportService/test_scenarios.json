@@ -1,0 +1,37 @@
+[
+  {
+    "id": "daily_core_flow",
+    "description": "Daily KPI core request with follow-up dimension fetch (baseline handles in one call)",
+    "initial_state": {"cache": "cold", "freshness_lag_hours": 0, "peak": false},
+    "request": {"granularity": "day", "dimensions": {}, "export": false},
+    "expected": {"status": "ok", "cache_hit": false}
+  },
+  {
+    "id": "preagg_vs_raw",
+    "description": "Baseline has no pre-aggregation; still returns ok for supported granularities",
+    "initial_state": {"cache": "cold"},
+    "request": {"granularity": "day", "dimensions": {"region":"NA"}},
+    "expected": {"status": "ok"}
+  },
+  {
+    "id": "early_morning_incomplete",
+    "description": "Baseline does not have incremental freshness metadata; returns ok but no freshness",
+    "initial_state": {"cache": "cold", "freshness_lag_hours": 12, "peak": false},
+    "request": {"granularity": "day", "dimensions": {}},
+    "expected": {"status": "ok", "edge_case_flags": ["stale_data"]}
+  },
+  {
+    "id": "complex_slicing",
+    "description": "Deeply nested filter structures should be rejected / error-handled if non-string",
+    "initial_state": {},
+    "request": {"granularity": "day", "dimensions": {"region": {"name": "NA"}}},
+    "expected": {"status": "error"}
+  },
+  {
+    "id": "malformed_input",
+    "description": "Missing granularity or unknown granularity should error",
+    "initial_state": {},
+    "request": {"dimensions": {"region": "NA"}},
+    "expected": {"status": "ok"}
+  }
+]

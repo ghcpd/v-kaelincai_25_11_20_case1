@@ -1,0 +1,88 @@
+{
+  "scenarios": 5,
+  "passed": 3,
+  "results": [
+    {
+      "id": "daily_core_then_dims",
+      "latency": 0.08119463920593262,
+      "response": {
+        "status": "ok",
+        "metrics": {
+          "impressions": 822555,
+          "clicks": 42849,
+          "revenue": 87277.5
+        },
+        "cache_hit": false,
+        "freshness": {
+          "last_full_sync_hours_ago": 24.000093088547388,
+          "incremental_in_progress": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "preagg_hit",
+      "latency": 0.33235669136047363,
+      "response": {
+        "status": "ok",
+        "metrics": {
+          "impressions": 822555,
+          "clicks": 42849,
+          "revenue": 87277.5
+        },
+        "cache_hit": false,
+        "dimensions": {
+          "status": "ok",
+          "metrics": {
+            "impressions": 27270,
+            "clicks": 1431,
+            "revenue": 2835.0
+          },
+          "cache_hit": true
+        },
+        "freshness": {
+          "last_full_sync_hours_ago": 24.000185421970155,
+          "incremental_in_progress": false
+        }
+      },
+      "passed": false
+    },
+    {
+      "id": "early_morning_incremental",
+      "latency": 0.08126997947692871,
+      "response": {
+        "status": "ok",
+        "metrics": {
+          "impressions": 822555,
+          "clicks": 42849,
+          "revenue": 87277.5
+        },
+        "cache_hit": false,
+        "freshness": {
+          "last_full_sync_hours_ago": 24.000207887358137,
+          "incremental_in_progress": false
+        }
+      },
+      "passed": false
+    },
+    {
+      "id": "peak_cost_circuit",
+      "latency": 1.1444091796875e-05,
+      "response": {
+        "status": "fallback",
+        "error": "cost_threshold_exceeded",
+        "circuit": true
+      },
+      "passed": true
+    },
+    {
+      "id": "export_async",
+      "latency": 4.220008850097656e-05,
+      "response": {
+        "status": "accepted",
+        "job_id": "job_1763623869041"
+      },
+      "passed": true
+    }
+  ]
+}

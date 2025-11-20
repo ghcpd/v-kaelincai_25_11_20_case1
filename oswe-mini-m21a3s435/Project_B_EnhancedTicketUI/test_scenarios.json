@@ -1,0 +1,32 @@
+[
+  {
+    "id": "normal_overloaded_to_structured",
+    "description": "Overloaded layout should be restructured; core info moved to top; history collapsed if long",
+    "input": {"description": "problem details", "priority": "high", "status": "open", "history": list(range(20)), "attachments": [{"id":1}]},
+    "expected": {"status": "ok", "metrics": {"hierarchy_clarity": 90}, "transformed_core_keys": ["description","priority","status"]}
+  },
+  {
+    "id": "misoperation_prevention",
+    "description": "Actions should require confirmation prompts for critical operations",
+    "input": {"description": "x", "notes": [{"type":"internal","text":"do not share"}]},
+    "expected": {"status": "ok", "actions": {"close_ticket": {"confirmation_required": True}}}
+  },
+  {
+    "id": "long_scroll_collapse",
+    "description": "Very long history should be collapsed and preview provided",
+    "input": {"history": list(range(200))},
+    "expected": {"status": "ok", "history_collapsed": True}
+  },
+  {
+    "id": "deep_nesting_flatten",
+    "description": "Deeply nested layout tree should be flattened to a sanitized structure",
+    "input": {"tree": {"a": {"b": {"c": {"d": "v"}}}}},
+    "expected": {"status": "ok", "transformed": {}}
+  },
+  {
+    "id": "malformed_input_and_unsafe_html",
+    "description": "Malformed input or unsafe html should be safely sanitized and produce warnings",
+    "input": {"description": "<script>alert(9)</script><b>ok</b>"},
+    "expected": {"status": "ok", "warnings_contains": "unsafe_html_cleaned"}
+  }
+]
