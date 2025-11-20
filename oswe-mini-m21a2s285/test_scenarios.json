@@ -1,0 +1,47 @@
+[
+  {
+    "id": "normal_overloaded",
+    "desc": "Overloaded flat layout, many fields and large history",
+    "input": {
+      "core": {"description": "User cannot login", "priority": "Urgent", "status": "Open"},
+      "history": {"entries": ["log1", "log2", "log3", "log4", "log5"]},
+      "attachments": {"list": [{"name": "screenshot.png", "size": 12345}]},
+      "fields": {"custom": {"value": "x"}},
+      "related": {"tickets": [123, 124]}
+    },
+    "expected": {"core_top": true, "history_collapsed": true, "preview_non_blocking": true}
+  },
+  {
+    "id": "internal_vs_customer",
+    "desc": "Mis-operation risk where internal notes and customer replies look identical",
+    "input": {
+      "core": {"description": "Payment failure", "priority": "High"},
+      "notes": {"items": [{"internal": true, "text": "Duplicate billing"}, {"internal": false, "text": "Please fix"}]}
+    },
+    "expected": {"internal_style_diff": true, "confirm_flags": true}
+  },
+  {
+    "id": "long_scroll",
+    "desc": "Very long history should be collapsed and preview shortened",
+    "input": {
+      "core": {"description": "Feature request"},
+      "history": {"entries": ["e0","e1","e2","e3","e4","e5","e6","e7","e8","e9","e10","e11","e12","e13","e14","e15","e16","e17","e18","e19","e20","e21","e22","e23","e24","e25","e26","e27","e28","e29","e30","e31","e32","e33","e34","e35","e36","e37","e38","e39","e40","e41","e42","e43","e44","e45","e46","e47","e48","e49"]}
+    },
+    "expected": {"history_collapsed": true, "preview_count": 3}
+  },
+  {
+    "id": "deep_nesting",
+    "desc": "Deeply nested layout tree must be flagged and collapsed",
+    "input": {
+      "core": {"description": "Deep nesting issue"},
+      "legacy": {"nested": {"a": {"b": {"c": {"d": {"e": {"f": "too deep"}}}}}}}
+    ,
+    "expected": {"deeply_nested_flag": true, "history_collapsed": true}
+  },
+  {
+    "id": "malformed_input",
+    "desc": "Malformed inputs and unsafe HTML must be sanitized and safe fallback used",
+    "input": "<script>bad</script>",
+    "expected": {"malformed_layout": true, "safe_sanitized": true}
+  }
+]
