@@ -1,0 +1,5 @@
+overloaded_standard: status=mismatch metrics={'hierarchy_clarity': 0.2, 'collapsed_sections': 1, 'total_sections': 4, 'misoperation_risk': 0.9, 'has_non_blocking_attachments': True}
+misoperation_confusion: status=mismatch metrics={'hierarchy_clarity': 1.0, 'collapsed_sections': 0, 'total_sections': 3, 'misoperation_risk': 0.9, 'has_non_blocking_attachments': False}
+long_history_scroll: status=ok metrics={'hierarchy_clarity': 1.0, 'collapsed_sections': 1, 'total_sections': 2, 'misoperation_risk': 0.9, 'has_non_blocking_attachments': False}
+complex_nesting: status=ok metrics={'hierarchy_clarity': 0.2, 'collapsed_sections': 0, 'total_sections': 3, 'misoperation_risk': 0.9, 'has_non_blocking_attachments': True}
+malformed_unsafe_html: status=ok metrics={'hierarchy_clarity': 0.2, 'collapsed_sections': 1, 'total_sections': 2, 'misoperation_risk': 0.9, 'has_non_blocking_attachments': False}
